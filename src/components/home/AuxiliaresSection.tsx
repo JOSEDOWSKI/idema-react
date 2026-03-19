@@ -7,7 +7,7 @@ export default function AuxiliaresSection() {
   const { ref, inView } = useInView({ triggerOnce: true })
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 lg:py-24 bg-[#f8f9fa]">
+    <section ref={ref} className="py-16 sm:py-20 lg:py-24 bg-[#F5F5F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
@@ -22,7 +22,7 @@ export default function AuxiliaresSection() {
           <p className="text-base sm:text-lg text-gray-600">
             10 meses de formación práctica
           </p>
-          <div className="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mt-4"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-[#00AFF0] to-[#572364] rounded-full mx-auto mt-4"></div>
         </motion.div>
 
         {/* Cards grid */}

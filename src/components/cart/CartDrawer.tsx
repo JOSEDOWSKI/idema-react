@@ -43,7 +43,7 @@ export default function CartDrawer() {
             className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-[61] flex flex-col"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#000428] to-[#004e92] p-5 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-[#10323F] to-[#2E136E] p-5 flex items-center justify-between">
               <div className="flex items-center gap-3 text-white">
                 <FaShoppingCart className="text-xl" />
                 <h2 className="text-lg font-bold">Carrito de Compras</h2>
@@ -98,7 +98,7 @@ export default function CartDrawer() {
                           <p className="text-xs text-gray-500 mt-0.5">
                             {item.product.duration} • {item.modality || item.product.modality}
                           </p>
-                          <p className="text-cyan-600 font-bold mt-1">
+                          <p className="text-[#00AFF0] font-bold mt-1">
                             S/.{item.price.toFixed(2)}
                           </p>
                         </div>
@@ -124,7 +124,7 @@ export default function CartDrawer() {
                           <span className="font-semibold text-gray-800 w-6 text-center">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.product.slug, item.quantity + 1)}
-                            className="w-7 h-7 rounded-full bg-cyan-100 hover:bg-cyan-200 text-cyan-700 flex items-center justify-center transition-colors"
+                            className="w-7 h-7 rounded-full bg-[#00AFF0]/15 hover:bg-[#00AFF0]/25 text-[#10323F] flex items-center justify-center transition-colors"
                           >
                             <FaPlus className="text-[10px]" />
                           </button>
@@ -153,7 +153,7 @@ export default function CartDrawer() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={handleCheckout}
-                  className="w-full py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-xl flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
+                  className="w-full py-4 bg-gradient-to-r from-[#00AFF0] to-[#10323F] text-white font-bold rounded-xl flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-[#00AFF0]/30 transition-all duration-300"
                 >
                   <FaCreditCard className="text-lg" />
                   Pagar con Culqi

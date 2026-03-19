@@ -7,25 +7,25 @@ const values = [
     icon: MdSchool,
     title: 'Excelencia Educativa',
     description: 'Compromiso con la más alta calidad en formación técnica profesional',
-    color: 'from-cyan-400 to-cyan-600',
+    color: 'from-[#00AFF0] to-[#0099cc]',
   },
   {
     icon: MdLightbulb,
     title: 'Innovación',
     description: 'Incorporamos tecnología y metodologías modernas en la enseñanza',
-    color: 'from-blue-400 to-blue-600',
+    color: 'from-[#10323F] to-[#2E136E]',
   },
   {
     icon: MdPublic,
     title: 'Compromiso Social',
     description: 'Educación accesible e inclusiva para el desarrollo de la comunidad',
-    color: 'from-purple-400 to-purple-600',
+    color: 'from-[#572364] to-[#2E136E]',
   },
   {
     icon: MdTrendingUp,
     title: 'Crecimiento',
     description: 'Formamos profesionales íntegros preparados para los retos del futuro',
-    color: 'from-pink-400 to-pink-600',
+    color: 'from-[#FD3DB5] to-[#572364]',
   },
 ]
 
@@ -65,7 +65,7 @@ export default function ValuesSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Nuestros Valores
           </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-[#00AFF0] to-[#572364] rounded-full mx-auto"></div>
         </motion.div>
 
         {/* Values grid */}

@@ -22,7 +22,7 @@ export default function CursosSection() {
           <p className="text-base sm:text-lg text-gray-600">
             4 semanas de capacitación intensiva
           </p>
-          <div className="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mt-4"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-[#00AFF0] to-[#572364] rounded-full mx-auto mt-4"></div>
         </motion.div>
 
         {/* Courses grid */}
@@ -48,14 +48,14 @@ export default function CursosSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-4 flex-1 flex flex-col">
-                    <h3 className="font-bold text-sm sm:text-base text-gray-900 mb-2 line-clamp-2 group-hover:text-cyan-600 transition-colors">
+                    <h3 className="font-bold text-sm sm:text-base text-gray-900 mb-2 line-clamp-2 group-hover:text-[#00AFF0] transition-colors">
                       {curso.title}
                     </h3>
                     <p className="text-xs text-gray-500 mb-3">
                       {curso.duration}
                     </p>
                     <div className="mt-auto">
-                      <span className="text-cyan-600 font-semibold text-xs group-hover:translate-x-1 transition-transform inline-block">
+                      <span className="text-[#00AFF0] font-semibold text-xs group-hover:translate-x-1 transition-transform inline-block">
                         Ver Curso →
                       </span>
                     </div>

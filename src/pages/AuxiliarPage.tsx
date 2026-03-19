@@ -12,11 +12,11 @@ export default function AuxiliarPage() {
 
   if (!auxiliar) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
           <h1 className="text-5xl font-bold text-white mb-4">404</h1>
           <p className="text-xl text-gray-400 mb-8">Programa auxiliar no encontrado</p>
-          <Link to="/"><button className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">Volver al Inicio</button></Link>
+          <Link to="/"><button className="px-8 py-3 bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white font-bold rounded-full hover:shadow-lg hover:shadow-[#00AFF0]/50 transition-all duration-300 hover:scale-105">Volver al Inicio</button></Link>
         </motion.div>
       </div>
     )
@@ -55,9 +55,9 @@ export default function AuxiliarPage() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 py-4 px-6 md:px-12">
         <div className="max-w-6xl mx-auto flex items-center gap-2 text-sm text-gray-600">
-          <Link to="/" className="hover:text-cyan-600">Inicio</Link>
+          <Link to="/" className="hover:text-[#00AFF0]">Inicio</Link>
           <span>/</span>
-          <Link to="/#auxiliares" className="hover:text-cyan-600">Programas Auxiliares</Link>
+          <Link to="/#auxiliares" className="hover:text-[#00AFF0]">Programas Auxiliares</Link>
           <span>/</span>
           <span className="text-gray-900 font-semibold">{auxiliar.title}</span>
         </div>
@@ -76,15 +76,15 @@ export default function AuxiliarPage() {
           {prices.length > 0 && (
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-16">
               <h2 className="text-3xl font-bold mb-8 gradient-text"><FaMoneyBillWave className="inline mr-2" />Inversión</h2>
-              {auxiliar.matricula && <p className="text-gray-600 mb-6">Matrícula: <span className="font-bold text-cyan-600">{auxiliar.matricula}</span></p>}
+              {auxiliar.matricula && <p className="text-gray-600 mb-6">Matrícula: <span className="font-bold text-[#00AFF0]">{auxiliar.matricula}</span></p>}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {prices.map(p => (
                   <motion.div key={p.label} whileHover={{ translateY: -5 }}
-                    className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border-2 border-gray-200 hover:border-cyan-300 transition-all text-center">
+                    className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border-2 border-gray-200 hover:border-[#00AFF0]/40 transition-all text-center">
                     <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-2">{p.label}</p>
                     <p className="text-3xl font-bold text-gray-900 mb-4">{p.price}</p>
                     <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => handleAddToCart(p.label, p.price)}
-                      className="w-full py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-full flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
+                      className="w-full py-3 bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white font-bold rounded-full flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#00AFF0]/30 transition-all duration-300">
                       <FaShoppingCart /> Agregar al Carrito
                     </motion.button>
                   </motion.div>
@@ -101,13 +101,13 @@ export default function AuxiliarPage() {
                 {auxiliar.mallaCurricular.map((period, yi) => (
                   <div key={yi}>
                     <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                      <span className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-sm flex items-center justify-center">{yi + 1}</span>
+                      <span className="w-8 h-8 rounded-full bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white text-sm flex items-center justify-center">{yi + 1}</span>
                       {period.year}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {period.courses.map((course, ci) => (
-                        <div key={ci} className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-cyan-50 transition-colors">
-                          <FaCheck className="text-cyan-500 mt-1 flex-shrink-0" />
+                        <div key={ci} className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-[#00AFF0]/10 transition-colors">
+                          <FaCheck className="text-[#00AFF0] mt-1 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{course}</span>
                         </div>
                       ))}
@@ -125,7 +125,7 @@ export default function AuxiliarPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {auxiliar.campoLaboral.map((campo, i) => (
                   <motion.div key={i} whileHover={{ translateY: -5 }}
-                    className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-200 hover:border-cyan-300 hover:shadow-md transition-all">
+                    className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-200 hover:border-[#00AFF0]/40 hover:shadow-md transition-all">
                     <h3 className="font-bold text-gray-800 mb-2">{campo.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{campo.description}</p>
                   </motion.div>
@@ -142,7 +142,7 @@ export default function AuxiliarPage() {
                 {auxiliar.features.map((feature, index) => (
                   <motion.div key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }} className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
-                    <FaCheck className="text-cyan-500 text-xl mt-1 flex-shrink-0" />
+                    <FaCheck className="text-[#00AFF0] text-xl mt-1 flex-shrink-0" />
                     <p className="text-gray-700">{feature}</p>
                   </motion.div>
                 ))}
@@ -154,11 +154,11 @@ export default function AuxiliarPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-16">
             <h2 className="text-3xl font-bold mb-8 gradient-text">Información del Programa</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl border border-cyan-200">
-                <FaClock className="text-cyan-600 text-3xl mb-4" /><h3 className="font-bold text-gray-800 mb-2">Duración</h3><p className="text-gray-700">{auxiliar.duration}</p>
+              <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-[#00AFF0]/10 to-[#572364]/10 p-6 rounded-xl border border-[#00AFF0]/30">
+                <FaClock className="text-[#00AFF0] text-3xl mb-4" /><h3 className="font-bold text-gray-800 mb-2">Duración</h3><p className="text-gray-700">{auxiliar.duration}</p>
               </motion.div>
               <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200">
-                <FaBook className="text-blue-600 text-3xl mb-4" /><h3 className="font-bold text-gray-800 mb-2">Modalidad</h3><p className="text-gray-700">{auxiliar.modality}</p>
+                <FaBook className="text-[#572364] text-3xl mb-4" /><h3 className="font-bold text-gray-800 mb-2">Modalidad</h3><p className="text-gray-700">{auxiliar.modality}</p>
               </motion.div>
               <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200">
                 <FaCertificate className="text-purple-600 text-3xl mb-4" /><h3 className="font-bold text-gray-800 mb-2">Certificación</h3><p className="text-gray-700">Certificado oficial MINEDU</p>
@@ -171,13 +171,13 @@ export default function AuxiliarPage() {
 
           {/* CTA Section */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-12 text-white text-center">
+            className="bg-gradient-to-r from-[#00AFF0] to-[#10323F] rounded-xl p-12 text-white text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Listo para empezar?</h2>
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">No esperes más para potenciar tu carrera profesional. Contáctanos hoy mismo.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={`https://wa.me/?text=${encodeURIComponent(auxiliar.whatsappMessage || 'Hola, me interesa este programa auxiliar')}`} target="_blank" rel="noopener noreferrer">
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white text-cyan-600 font-bold rounded-full flex items-center gap-2 justify-center hover:shadow-lg transition-all duration-300 w-full sm:w-auto">
+                  className="px-8 py-4 bg-white text-[#00AFF0] font-bold rounded-full flex items-center gap-2 justify-center hover:shadow-lg transition-all duration-300 w-full sm:w-auto">
                   <FaWhatsapp className="text-xl" /> Contactar por WhatsApp
                 </motion.button>
               </a>

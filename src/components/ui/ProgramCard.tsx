@@ -32,7 +32,7 @@ export default function ProgramCard({ program, basePath, index = 0 }: Props) {
             </span>
           </div>
           <div className="p-5">
-            <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#0dcaf0] transition-colors">
+            <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#00AFF0] transition-colors">
               {program.title}
             </h3>
             <p className="text-gray-600 text-sm line-clamp-2 mb-3">
@@ -40,7 +40,7 @@ export default function ProgramCard({ program, basePath, index = 0 }: Props) {
             </p>
             <div className="flex items-center justify-between">
               <span className="text-xs text-gray-500">{program.modality}</span>
-              <span className="text-[#0dcaf0] font-semibold text-sm group-hover:translate-x-1 transition-transform">
+              <span className="text-[#00AFF0] font-semibold text-sm group-hover:translate-x-1 transition-transform">
                 Ver más →
               </span>
             </div>

@@ -28,7 +28,7 @@ export default function CompaniesSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Empresas que confían en nosotros
           </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-[#00AFF0] to-[#572364] rounded-full mx-auto"></div>
         </motion.div>
 
         {/* Infinite scroll carousel */}

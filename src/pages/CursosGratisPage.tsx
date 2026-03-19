@@ -85,10 +85,10 @@ export default function CursosGratisPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#572364] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <motion.div
@@ -98,7 +98,7 @@ export default function CursosGratisPage() {
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Cursos Gratuitos</h1>
-          <p className="text-lg md:text-xl text-cyan-300 max-w-2xl">Acceso libre a educación de calidad en diversas áreas</p>
+          <p className="text-lg md:text-xl text-[#00AFF0] max-w-2xl">Acceso libre a educación de calidad en diversas áreas</p>
         </motion.div>
       </div>
 
@@ -128,9 +128,9 @@ export default function CursosGratisPage() {
           >
             <motion.div
               whileHover={{ translateY: -10 }}
-              className="bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-xl border-2 border-cyan-200"
+              className="bg-gradient-to-br from-[#00AFF0]/10 to-[#572364]/10 p-8 rounded-xl border-2 border-[#00AFF0]/30"
             >
-              <FaVideo className="text-4xl text-cyan-600 mb-4" />
+              <FaVideo className="text-4xl text-[#00AFF0] mb-4" />
               <h3 className="text-xl font-bold text-gray-800 mb-3">100% En Línea</h3>
               <p className="text-gray-700">Accede desde cualquier dispositivo en tu horario disponible.</p>
             </motion.div>
@@ -172,9 +172,9 @@ export default function CursosGratisPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ translateY: -10 }}
-                  className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-cyan-300 transition-all shadow-lg hover:shadow-xl"
+                  className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-[#00AFF0]/40 transition-all shadow-lg hover:shadow-xl"
                 >
-                  <div className="bg-gradient-to-br from-cyan-400 to-blue-500 p-6 text-white h-32 flex items-center justify-center">
+                  <div className="bg-gradient-to-br from-[#00AFF0] to-[#572364] p-6 text-white h-32 flex items-center justify-center">
                     <course.icon className="text-5xl opacity-80" />
                   </div>
 
@@ -189,7 +189,7 @@ export default function CursosGratisPage() {
                       </div>
                       <div className="flex justify-between">
                         <span>Nivel:</span>
-                        <span className="font-semibold text-cyan-600">{course.level}</span>
+                        <span className="font-semibold text-[#00AFF0]">{course.level}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Instructor:</span>
@@ -205,7 +205,7 @@ export default function CursosGratisPage() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-lg flex items-center justify-center gap-2 hover:shadow-lg transition-all duration-300"
+                        className="w-full px-4 py-2 bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white font-bold rounded-lg flex items-center justify-center gap-2 hover:shadow-lg transition-all duration-300"
                       >
                         Ver Curso
                         <FaArrowRight className="text-sm" />
@@ -223,7 +223,7 @@ export default function CursosGratisPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-12 text-white text-center"
+            className="bg-gradient-to-r from-[#00AFF0] to-[#10323F] rounded-xl p-12 text-white text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Listo para Aprender?</h2>
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
@@ -234,7 +234,7 @@ export default function CursosGratisPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:shadow-lg transition-all duration-300"
+                className="px-8 py-4 bg-white text-[#00AFF0] font-bold rounded-full hover:shadow-lg transition-all duration-300"
               >
                 Acceder al Campus Virtual
               </motion.button>

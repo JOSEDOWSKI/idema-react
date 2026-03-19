@@ -47,10 +47,10 @@ export default function IdemaEducaPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#572364] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <motion.div
@@ -59,9 +59,9 @@ export default function IdemaEducaPage() {
           transition={{ duration: 0.6 }}
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
-          <FaTree className="text-6xl mb-4 text-cyan-300" />
+          <FaTree className="text-6xl mb-4 text-[#00AFF0]" />
           <h1 className="text-5xl md:text-6xl font-bold mb-4">IDEMA Educa</h1>
-          <p className="text-lg md:text-xl text-cyan-300 max-w-2xl">Árbol de Habilidades - Toda nuestra oferta educativa en un solo lugar</p>
+          <p className="text-lg md:text-xl text-[#00AFF0] max-w-2xl">Árbol de Habilidades - Toda nuestra oferta educativa en un solo lugar</p>
         </motion.div>
       </div>
 
@@ -112,9 +112,9 @@ export default function IdemaEducaPage() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.05 }}
                       whileHover={{ translateY: -5 }}
-                      className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 border-2 border-gray-200 hover:border-cyan-300 transition-all group"
+                      className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 border-2 border-gray-200 hover:border-[#00AFF0]/40 transition-all group"
                     >
-                      <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-cyan-600 transition-colors">
+                      <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-[#00AFF0] transition-colors">
                         {program.title}
                       </h4>
                       <p className="text-sm text-gray-600 mb-4">{program.shortTitle}</p>
@@ -134,7 +134,7 @@ export default function IdemaEducaPage() {
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg flex items-center justify-center gap-2 hover:shadow-lg transition-all duration-300"
+                          className="w-full px-4 py-2 bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white font-semibold rounded-lg flex items-center justify-center gap-2 hover:shadow-lg transition-all duration-300"
                         >
                           Ver Detalles
                           <FaArrowRight className="text-sm" />
@@ -153,13 +153,13 @@ export default function IdemaEducaPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-20 bg-gradient-to-br from-cyan-50 to-blue-50 p-12 rounded-xl border-2 border-cyan-200"
+            className="mt-20 bg-gradient-to-br from-[#00AFF0]/10 to-[#572364]/10 p-12 rounded-xl border-2 border-[#00AFF0]/30"
           >
             <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Estructura del Árbol de Habilidades</h3>
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                <div className="w-12 h-12 bg-[#572364] rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                   1
                 </div>
                 <div>
@@ -206,7 +206,7 @@ export default function IdemaEducaPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-12 text-white text-center"
+            className="mt-16 bg-gradient-to-r from-[#00AFF0] to-[#10323F] rounded-xl p-12 text-white text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">¿No Sabes Cuál Elegir?</h2>
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
@@ -217,7 +217,7 @@ export default function IdemaEducaPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:shadow-lg transition-all duration-300"
+                className="px-8 py-4 bg-white text-[#00AFF0] font-bold rounded-full hover:shadow-lg transition-all duration-300"
               >
                 Realizar Prueba de Orientación
               </motion.button>

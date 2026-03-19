@@ -22,7 +22,7 @@ export default function CarrerasSection() {
           <p className="text-base sm:text-lg text-gray-600">
             3 años de formación integral
           </p>
-          <div className="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto mt-4"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-[#00AFF0] to-[#572364] rounded-full mx-auto mt-4"></div>
         </motion.div>
 
         {/* Cards grid */}

@@ -14,7 +14,7 @@ export default function CursoPage() {
 
   if (!curso) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function CursoPage() {
           <h1 className="text-5xl font-bold text-white mb-4">404</h1>
           <p className="text-xl text-gray-400 mb-8">Curso no encontrado</p>
           <Link to="/">
-            <button className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
+            <button className="px-8 py-3 bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white font-bold rounded-full hover:shadow-lg hover:shadow-[#00AFF0]/50 transition-all duration-300 hover:scale-105">
               Volver al Inicio
             </button>
           </Link>
@@ -80,9 +80,9 @@ export default function CursoPage() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 py-4 px-6 md:px-12">
         <div className="max-w-6xl mx-auto flex items-center gap-2 text-sm text-gray-600">
-          <Link to="/" className="hover:text-cyan-600">Inicio</Link>
+          <Link to="/" className="hover:text-[#00AFF0]">Inicio</Link>
           <span>/</span>
-          <Link to="/#cursos" className="hover:text-cyan-600">Cursos</Link>
+          <Link to="/#cursos" className="hover:text-[#00AFF0]">Cursos</Link>
           <span>/</span>
           <span className="text-gray-900 font-semibold">{curso.title}</span>
         </div>
@@ -126,7 +126,7 @@ export default function CursoPage() {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
                       >
-                        <FaCheck className="text-cyan-500 text-xl mt-1 flex-shrink-0" />
+                        <FaCheck className="text-[#00AFF0] text-xl mt-1 flex-shrink-0" />
                         <p className="text-gray-700">{feature}</p>
                       </motion.div>
                     ))}
@@ -146,9 +146,9 @@ export default function CursoPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <motion.div
                     whileHover={{ translateY: -10 }}
-                    className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl border border-cyan-200"
+                    className="bg-gradient-to-br from-[#00AFF0]/10 to-[#572364]/10 p-6 rounded-xl border border-[#00AFF0]/30"
                   >
-                    <FaClock className="text-cyan-600 text-3xl mb-4" />
+                    <FaClock className="text-[#00AFF0] text-3xl mb-4" />
                     <h3 className="font-bold text-gray-800 mb-2">Duración</h3>
                     <p className="text-gray-700">{curso.duration}</p>
                   </motion.div>
@@ -157,7 +157,7 @@ export default function CursoPage() {
                     whileHover={{ translateY: -10 }}
                     className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200"
                   >
-                    <FaBook className="text-blue-600 text-3xl mb-4" />
+                    <FaBook className="text-[#572364] text-3xl mb-4" />
                     <h3 className="font-bold text-gray-800 mb-2">Modalidad</h3>
                     <p className="text-gray-700">{curso.modality}</p>
                   </motion.div>
@@ -216,8 +216,8 @@ export default function CursoPage() {
                 {/* Price Card */}
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
                   {/* Price header */}
-                  <div className="bg-gradient-to-r from-[#000428] to-[#004e92] p-6 text-center">
-                    <p className="text-cyan-300 text-sm font-semibold uppercase tracking-wider mb-2">Precio del Curso</p>
+                  <div className="bg-gradient-to-r from-[#10323F] to-[#2E136E] p-6 text-center">
+                    <p className="text-[#00AFF0] text-sm font-semibold uppercase tracking-wider mb-2">Precio del Curso</p>
                     <p className="text-4xl font-bold text-white">{curso.price || 'Consultar'}</p>
                     <p className="text-white/60 text-sm mt-1">Pago único</p>
                   </div>
@@ -230,7 +230,7 @@ export default function CursoPage() {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={handlePayment}
-                        className="w-full py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-xl flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
+                        className="w-full py-4 bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white font-bold rounded-xl flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-[#00AFF0]/30 transition-all duration-300"
                       >
                         <FaCreditCard className="text-lg" />
                         Comprar Ahora
@@ -242,7 +242,7 @@ export default function CursoPage() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => addItem(curso, priceNumber)}
-                      className="w-full py-3 border-2 border-cyan-400 text-cyan-600 font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-cyan-50 transition-all duration-300"
+                      className="w-full py-3 border-2 border-[#00AFF0]/50 text-[#00AFF0] font-bold rounded-xl flex items-center justify-center gap-3 hover:bg-[#00AFF0]/10 transition-all duration-300"
                     >
                       <FaShoppingCart className="text-lg" />
                       Agregar al Carrito
@@ -270,7 +270,7 @@ export default function CursoPage() {
                       <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-xl flex items-center justify-center gap-3 hover:border-cyan-300 hover:text-cyan-600 transition-all duration-300"
+                        className="w-full py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-xl flex items-center justify-center gap-3 hover:border-[#00AFF0]/40 hover:text-[#00AFF0] transition-all duration-300"
                       >
                         <FaEnvelope className="text-lg" />
                         Solicitar Información
@@ -288,23 +288,23 @@ export default function CursoPage() {
                       <p className="text-sm font-bold text-gray-800 mb-3">Este curso incluye:</p>
                       <ul className="space-y-2">
                         <li className="flex items-center gap-2 text-sm text-gray-600">
-                          <FaCheck className="text-cyan-500 flex-shrink-0" />
+                          <FaCheck className="text-[#00AFF0] flex-shrink-0" />
                           Acceso a plataforma virtual
                         </li>
                         <li className="flex items-center gap-2 text-sm text-gray-600">
-                          <FaCheck className="text-cyan-500 flex-shrink-0" />
+                          <FaCheck className="text-[#00AFF0] flex-shrink-0" />
                           Material didáctico digital
                         </li>
                         <li className="flex items-center gap-2 text-sm text-gray-600">
-                          <FaCheck className="text-cyan-500 flex-shrink-0" />
+                          <FaCheck className="text-[#00AFF0] flex-shrink-0" />
                           Certificado virtual incluido
                         </li>
                         <li className="flex items-center gap-2 text-sm text-gray-600">
-                          <FaCheck className="text-cyan-500 flex-shrink-0" />
+                          <FaCheck className="text-[#00AFF0] flex-shrink-0" />
                           Certificación ISO 21001
                         </li>
                         <li className="flex items-center gap-2 text-sm text-gray-600">
-                          <FaCheck className="text-cyan-500 flex-shrink-0" />
+                          <FaCheck className="text-[#00AFF0] flex-shrink-0" />
                           Soporte por WhatsApp
                         </li>
                       </ul>

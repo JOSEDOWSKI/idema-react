@@ -109,10 +109,10 @@ export default function FAQPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#572364] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <motion.div
@@ -122,7 +122,7 @@ export default function FAQPage() {
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Preguntas Frecuentes</h1>
-          <p className="text-lg md:text-xl text-cyan-300 max-w-2xl">Encuentra respuestas a todas tus dudas</p>
+          <p className="text-lg md:text-xl text-[#00AFF0] max-w-2xl">Encuentra respuestas a todas tus dudas</p>
         </motion.div>
       </div>
 
@@ -143,7 +143,7 @@ export default function FAQPage() {
                 placeholder="Busca una pregunta..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-6 py-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors text-lg"
+                className="w-full pl-12 pr-6 py-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#00AFF0] transition-colors text-lg"
               />
             </div>
           </motion.div>
@@ -163,7 +163,7 @@ export default function FAQPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full font-semibold transition-all ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -188,14 +188,14 @@ export default function FAQPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="border-2 border-gray-200 rounded-lg overflow-hidden hover:border-cyan-300 transition-colors"
+                    className="border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00AFF0]/40 transition-colors"
                   >
                     <motion.button
                       onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
                       className="w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors text-left"
                     >
                       <div>
-                        <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full mr-4 mb-2">
+                        <span className="inline-block px-3 py-1 bg-[#00AFF0]/15 text-[#10323F] text-xs font-semibold rounded-full mr-4 mb-2">
                           {item.category}
                         </span>
                         <h3 className="text-lg font-semibold text-gray-800">{item.question}</h3>
@@ -204,7 +204,7 @@ export default function FAQPage() {
                         animate={{ rotate: expandedId === item.id ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <FaChevronDown className="text-cyan-600 text-xl flex-shrink-0 ml-4" />
+                        <FaChevronDown className="text-[#00AFF0] text-xl flex-shrink-0 ml-4" />
                       </motion.div>
                     </motion.button>
 
@@ -245,7 +245,7 @@ export default function FAQPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-12 text-white text-center"
+            className="mt-16 bg-gradient-to-r from-[#00AFF0] to-[#10323F] rounded-xl p-12 text-white text-center"
           >
             <h2 className="text-3xl font-bold mb-4">¿No encontraste tu respuesta?</h2>
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
@@ -256,7 +256,7 @@ export default function FAQPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:shadow-lg transition-all duration-300"
+                className="px-8 py-4 bg-white text-[#00AFF0] font-bold rounded-full hover:shadow-lg transition-all duration-300"
               >
                 Contactar Ahora
               </motion.button>

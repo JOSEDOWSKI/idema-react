@@ -83,9 +83,9 @@ export default function LibroReclamacionesPage() {
       </Helmet>
 
       {/* Hero */}
-      <div className="relative h-72 md:h-80 overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-72 md:h-80 overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,9 +93,9 @@ export default function LibroReclamacionesPage() {
           transition={{ duration: 0.6 }}
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
-          <FaBook className="text-5xl text-cyan-300 mb-4" />
+          <FaBook className="text-5xl text-[#00AFF0] mb-4" />
           <h1 className="text-4xl md:text-5xl font-bold mb-2">Libro de Reclamaciones</h1>
-          <p className="text-sm md:text-base text-cyan-300">Conforme al Código de Protección y Defensa del Consumidor - Ley N° 29571</p>
+          <p className="text-sm md:text-base text-[#00AFF0]">Conforme al Código de Protección y Defensa del Consumidor - Ley N° 29571</p>
         </motion.div>
       </div>
 
@@ -112,7 +112,7 @@ export default function LibroReclamacionesPage() {
               </div>
               <h2 className="text-3xl font-bold text-gray-800 mb-4">¡Reclamación Enviada!</h2>
               <p className="text-gray-600 mb-8">Hemos recibido tu reclamación. Nos comprometemos a responder dentro de los 30 días calendario establecidos por ley.</p>
-              <button onClick={() => setSubmitted(false)} className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-full hover:shadow-lg transition-all">
+              <button onClick={() => setSubmitted(false)} className="px-8 py-3 bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white font-bold rounded-full hover:shadow-lg transition-all">
                 Enviar otra reclamación
               </button>
             </motion.div>
@@ -150,14 +150,14 @@ export default function LibroReclamacionesPage() {
                 {/* Consumer data */}
                 <div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                    <span className="w-8 h-8 bg-cyan-100 text-cyan-600 rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="w-8 h-8 bg-[#00AFF0]/15 text-[#00AFF0] rounded-full flex items-center justify-center text-sm font-bold">1</span>
                     Datos del Consumidor
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Tipo de Documento</label>
                       <select name="tipoDocumento" value={formData.tipoDocumento} onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm">
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm">
                         <option value="DNI">DNI</option>
                         <option value="CE">Carné de Extranjería</option>
                         <option value="Pasaporte">Pasaporte</option>
@@ -166,32 +166,32 @@ export default function LibroReclamacionesPage() {
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Número de Documento *</label>
                       <input type="text" name="numDocumento" value={formData.numDocumento} onChange={handleChange} maxLength={12}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.numDocumento ? 'border-red-400' : 'border-gray-200'} focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm`} />
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.numDocumento ? 'border-red-400' : 'border-gray-200'} focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm`} />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Nombres *</label>
                       <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} maxLength={50}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.nombre ? 'border-red-400' : 'border-gray-200'} focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm`} />
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.nombre ? 'border-red-400' : 'border-gray-200'} focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm`} />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Apellidos *</label>
                       <input type="text" name="apellido" value={formData.apellido} onChange={handleChange} maxLength={50}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.apellido ? 'border-red-400' : 'border-gray-200'} focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm`} />
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.apellido ? 'border-red-400' : 'border-gray-200'} focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm`} />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Correo Electrónico *</label>
                       <input type="email" name="email" value={formData.email} onChange={handleChange} maxLength={100}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.email ? 'border-red-400' : 'border-gray-200'} focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm`} />
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.email ? 'border-red-400' : 'border-gray-200'} focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm`} />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Teléfono *</label>
                       <input type="tel" name="telefono" value={formData.telefono} onChange={handleChange} maxLength={15}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.telefono ? 'border-red-400' : 'border-gray-200'} focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm`} />
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.telefono ? 'border-red-400' : 'border-gray-200'} focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm`} />
                     </div>
                     <div className="md:col-span-2">
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Dirección</label>
                       <input type="text" name="direccion" value={formData.direccion} onChange={handleChange} maxLength={200}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm" />
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm" />
                     </div>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export default function LibroReclamacionesPage() {
                 {/* Complaint details */}
                 <div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                    <span className="w-8 h-8 bg-cyan-100 text-cyan-600 rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="w-8 h-8 bg-[#00AFF0]/15 text-[#00AFF0] rounded-full flex items-center justify-center text-sm font-bold">2</span>
                     Detalle de la Reclamación
                   </h3>
 
@@ -209,12 +209,12 @@ export default function LibroReclamacionesPage() {
                       <div className="flex gap-4">
                         <label className="flex items-center gap-2 cursor-pointer">
                           <input type="radio" name="tipoReclamo" value="reclamo" checked={formData.tipoReclamo === 'reclamo'} onChange={handleChange}
-                            className="w-4 h-4 text-cyan-500" />
+                            className="w-4 h-4 text-[#00AFF0]" />
                           <span className="text-sm text-gray-700"><strong>Reclamo:</strong> disconformidad con los servicios</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer">
                           <input type="radio" name="tipoReclamo" value="queja" checked={formData.tipoReclamo === 'queja'} onChange={handleChange}
-                            className="w-4 h-4 text-cyan-500" />
+                            className="w-4 h-4 text-[#00AFF0]" />
                           <span className="text-sm text-gray-700"><strong>Queja:</strong> malestar o descontento con la atención</span>
                         </label>
                       </div>
@@ -223,21 +223,21 @@ export default function LibroReclamacionesPage() {
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Descripción del bien o servicio contratado</label>
                       <textarea name="descripcionBien" value={formData.descripcionBien} onChange={handleChange} rows={2} maxLength={500}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm resize-none"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm resize-none"
                         placeholder="Ej: Curso de Clasificación de Medicamentos" />
                     </div>
 
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Detalle de la reclamación *</label>
                       <textarea name="detalleReclamo" value={formData.detalleReclamo} onChange={handleChange} rows={4} maxLength={1000}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.detalleReclamo ? 'border-red-400' : 'border-gray-200'} focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm resize-none`}
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.detalleReclamo ? 'border-red-400' : 'border-gray-200'} focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm resize-none`}
                         placeholder="Describa con detalle su reclamo o queja..." />
                     </div>
 
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Pedido del consumidor</label>
                       <textarea name="pedido" value={formData.pedido} onChange={handleChange} rows={2} maxLength={500}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none text-sm resize-none"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none text-sm resize-none"
                         placeholder="¿Qué solución espera?" />
                     </div>
                   </div>
@@ -250,9 +250,9 @@ export default function LibroReclamacionesPage() {
                       className="w-5 h-5 mt-0.5 rounded" />
                     <span className="text-sm">
                       Declaro que la información proporcionada es veraz y acepto las{' '}
-                      <a href="/politica-privacidad" target="_blank" className="text-cyan-600 underline">Políticas de Privacidad</a>{' '}
+                      <a href="/politica-privacidad" target="_blank" className="text-[#00AFF0] underline">Políticas de Privacidad</a>{' '}
                       y los{' '}
-                      <a href="/terminos-y-condiciones" target="_blank" className="text-cyan-600 underline">Términos y Condiciones</a>.
+                      <a href="/terminos-y-condiciones" target="_blank" className="text-[#00AFF0] underline">Términos y Condiciones</a>.
                     </span>
                   </label>
 
@@ -260,7 +260,7 @@ export default function LibroReclamacionesPage() {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 text-lg"
+                    className="w-full py-4 bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#00AFF0]/30 transition-all duration-300 text-lg"
                   >
                     Enviar Reclamación
                   </motion.button>

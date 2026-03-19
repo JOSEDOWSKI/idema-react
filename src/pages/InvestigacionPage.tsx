@@ -51,10 +51,10 @@ export default function InvestigacionPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#572364] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <motion.div
@@ -64,7 +64,7 @@ export default function InvestigacionPage() {
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Investigación e Innovación</h1>
-          <p className="text-lg md:text-xl text-cyan-300 max-w-2xl">Avanzando en la educación técnica a través de la investigación</p>
+          <p className="text-lg md:text-xl text-[#00AFF0] max-w-2xl">Avanzando en la educación técnica a través de la investigación</p>
         </motion.div>
       </div>
 
@@ -102,9 +102,9 @@ export default function InvestigacionPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ translateY: -10 }}
-                  className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-xl border-2 border-gray-200 hover:border-cyan-300 transition-all"
+                  className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-xl border-2 border-gray-200 hover:border-[#00AFF0]/40 transition-all"
                 >
-                  <line.icon className="text-4xl text-cyan-600 mb-4" />
+                  <line.icon className="text-4xl text-[#00AFF0] mb-4" />
                   <h3 className="text-xl font-bold text-gray-800 mb-3">{line.title}</h3>
                   <p className="text-gray-700">{line.description}</p>
                 </motion.div>
@@ -130,16 +130,16 @@ export default function InvestigacionPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ translateX: 10 }}
-                  className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-cyan-300 transition-all cursor-pointer"
+                  className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#00AFF0]/40 transition-all cursor-pointer"
                 >
                   <div className="flex items-start gap-4">
-                    <FaFileAlt className="text-cyan-600 text-2xl mt-1 flex-shrink-0" />
+                    <FaFileAlt className="text-[#00AFF0] text-2xl mt-1 flex-shrink-0" />
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-2">
-                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
+                        <span className="inline-block px-3 py-1 bg-[#572364]/15 text-[#2E136E] text-xs font-semibold rounded-full">
                           {pub.year}
                         </span>
-                        <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full">
+                        <span className="inline-block px-3 py-1 bg-[#00AFF0]/15 text-[#10323F] text-xs font-semibold rounded-full">
                           {pub.type}
                         </span>
                       </div>
@@ -165,7 +165,7 @@ export default function InvestigacionPage() {
                 <h3 className="text-xl font-bold text-gray-800 mb-3">Plataforma de Aprendizaje Virtual Avanzada</h3>
                 <p className="text-gray-700 mb-3">Desarrollo de una plataforma educativa integrada con inteligencia artificial para personalizar la experiencia de aprendizaje de cada estudiante.</p>
                 <div className="w-full bg-gray-300 rounded-full h-2">
-                  <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style={{ width: '75%' }}></div>
+                  <div className="bg-gradient-to-r from-[#00AFF0] to-[#572364] h-2 rounded-full" style={{ width: '75%' }}></div>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">75% completado</p>
               </div>
@@ -174,7 +174,7 @@ export default function InvestigacionPage() {
                 <h3 className="text-xl font-bold text-gray-800 mb-3">Laboratorios Virtuales 3D</h3>
                 <p className="text-gray-700 mb-3">Creación de laboratorios virtuales inmersivos para prácticas técnicas seguras y accesibles desde cualquier ubicación.</p>
                 <div className="w-full bg-gray-300 rounded-full h-2">
-                  <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style={{ width: '50%' }}></div>
+                  <div className="bg-gradient-to-r from-[#00AFF0] to-[#572364] h-2 rounded-full" style={{ width: '50%' }}></div>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">50% completado</p>
               </div>
@@ -183,7 +183,7 @@ export default function InvestigacionPage() {
                 <h3 className="text-xl font-bold text-gray-800 mb-3">Sistema de Colocación Laboral Asistido</h3>
                 <p className="text-gray-700 mb-3">Herramienta que conecta egresados con oportunidades laborales utilizando análisis de competencias y preferencias.</p>
                 <div className="w-full bg-gray-300 rounded-full h-2">
-                  <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style={{ width: '60%' }}></div>
+                  <div className="bg-gradient-to-r from-[#00AFF0] to-[#572364] h-2 rounded-full" style={{ width: '60%' }}></div>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">60% completado</p>
               </div>
@@ -196,7 +196,7 @@ export default function InvestigacionPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-12 text-white text-center"
+            className="bg-gradient-to-r from-[#00AFF0] to-[#10323F] rounded-xl p-12 text-white text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Interesado en Nuestras Investigaciones?</h2>
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
@@ -207,7 +207,7 @@ export default function InvestigacionPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:shadow-lg transition-all duration-300"
+                className="px-8 py-4 bg-white text-[#00AFF0] font-bold rounded-full hover:shadow-lg transition-all duration-300"
               >
                 Solicitar Información
               </motion.button>

@@ -74,13 +74,13 @@ export function useCulqi() {
       lang: 'es',
       style: {
         logo: 'https://idema.edu.pe/assets/img/idemaNEWLOGO2026.png',
-        bannerColor: '#000428',
-        buttonBackground: '#0dcaf0',
-        menuColor: '#0dcaf0',
-        linksColor: '#0dcaf0',
+        bannerColor: '#10323F',
+        buttonBackground: '#00AFF0',
+        menuColor: '#00AFF0',
+        linksColor: '#00AFF0',
         buttonText: 'Pagar',
         buttonTextColor: '#ffffff',
-        priceColor: '#0dcaf0',
+        priceColor: '#00AFF0',
       },
     })
 

@@ -18,11 +18,11 @@ export default function NotFoundPage() {
         <meta name="description" content="La página que buscas no existe en Instituto IDEMA." />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-6 overflow-hidden relative">
+      <div className="min-h-screen bg-gradient-to-br from-[#10323F] via-[#2E136E] to-[#10323F] flex items-center justify-center px-6 overflow-hidden relative">
         {/* Background Animation Elements */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#572364] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         {/* Main Content */}
@@ -39,7 +39,7 @@ export default function NotFoundPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            <div className="text-9xl md:text-[150px] font-black bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-lg">
+            <div className="text-9xl md:text-[150px] font-black bg-gradient-to-r from-[#00AFF0] via-[#572364] to-[#2E136E] bg-clip-text text-transparent drop-shadow-lg">
               404
             </div>
           </motion.div>
@@ -55,7 +55,7 @@ export default function NotFoundPage() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="text-6xl text-cyan-300"
+                className="text-6xl text-[#00AFF0]"
               >
                 📍
               </motion.div>
@@ -92,9 +92,9 @@ export default function NotFoundPage() {
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-br from-gray-800 to-gray-700 p-4 rounded-lg border border-gray-600 hover:border-cyan-400 transition-all cursor-pointer group"
+                  className="bg-gradient-to-br from-gray-800 to-gray-700 p-4 rounded-lg border border-gray-600 hover:border-[#00AFF0] transition-all cursor-pointer group"
                 >
-                  <link.icon className="text-2xl text-cyan-400 mx-auto mb-2 group-hover:text-cyan-300 transition-colors" />
+                  <link.icon className="text-2xl text-[#00AFF0] mx-auto mb-2 group-hover:text-[#00AFF0] transition-colors" />
                   <p className="text-white font-semibold text-sm">{link.label}</p>
                 </motion.div>
               </Link>
@@ -112,7 +112,7 @@ export default function NotFoundPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full flex items-center gap-2 justify-center hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full flex items-center gap-2 justify-center hover:shadow-2xl hover:shadow-[#00AFF0]/50 transition-all duration-300"
               >
                 Volver al Inicio
                 <FaArrowRight />
@@ -139,7 +139,7 @@ export default function NotFoundPage() {
           >
             <p className="text-gray-500 text-sm">
               ¿Aún necesitas ayuda?
-              <a href="/#contacto" className="text-cyan-400 hover:text-cyan-300 font-semibold ml-1">
+              <a href="/#contacto" className="text-[#00AFF0] hover:text-[#00AFF0] font-semibold ml-1">
                 Contacta con nuestro equipo
               </a>
             </p>

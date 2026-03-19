@@ -55,10 +55,10 @@ export default function TestimoniosPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#572364] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <motion.div
@@ -68,7 +68,7 @@ export default function TestimoniosPage() {
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Testimonios</h1>
-          <p className="text-lg md:text-xl text-cyan-300 max-w-2xl">Historias de éxito de nuestros egresados</p>
+          <p className="text-lg md:text-xl text-[#00AFF0] max-w-2xl">Historias de éxito de nuestros egresados</p>
         </motion.div>
       </div>
 
@@ -103,7 +103,7 @@ export default function TestimoniosPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ translateY: -10 }}
-                className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 border-2 border-gray-200 hover:border-cyan-300 transition-all"
+                className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 border-2 border-gray-200 hover:border-[#00AFF0]/40 transition-all"
               >
                 {/* Star Rating */}
                 <div className="flex gap-1 mb-4">
@@ -143,7 +143,7 @@ export default function TestimoniosPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-12 text-white text-center"
+            className="bg-gradient-to-r from-[#00AFF0] to-[#10323F] rounded-xl p-12 text-white text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Quieres Ser el Próximo?</h2>
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
@@ -154,7 +154,7 @@ export default function TestimoniosPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-cyan-600 font-bold rounded-full hover:shadow-lg transition-all duration-300"
+                className="px-8 py-4 bg-white text-[#00AFF0] font-bold rounded-full hover:shadow-lg transition-all duration-300"
               >
                 Solicitar Información
               </motion.button>

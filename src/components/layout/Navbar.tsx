@@ -118,9 +118,9 @@ export default function Navbar() {
 
   // Navbar background: on home transparent until scrolled, on other pages always dark
   const navBg = !isHome
-    ? 'bg-[#212529]/95 backdrop-blur-md shadow-lg'
+    ? 'bg-[#10323F]/95 backdrop-blur-md shadow-lg'
     : isScrolled
-      ? 'bg-[#212529]/95 backdrop-blur-md shadow-lg'
+      ? 'bg-[#10323F]/95 backdrop-blur-md shadow-lg'
       : 'bg-transparent'
 
   return (
@@ -147,7 +147,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-white/90 hover:text-[#0dcaf0] transition-colors text-sm font-semibold uppercase tracking-wider px-3 py-2"
+                className="text-white/90 hover:text-[#00AFF0] transition-colors text-sm font-semibold uppercase tracking-wider px-3 py-2"
               >
                 {link.label}
               </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setOpenDropdown(openDropdown === 'acceder' ? null : 'acceder')}
-                className="text-white/90 hover:text-[#0dcaf0] transition-colors text-sm font-semibold uppercase tracking-wider px-3 py-2 flex items-center gap-1"
+                className="text-white/90 hover:text-[#00AFF0] transition-colors text-sm font-semibold uppercase tracking-wider px-3 py-2 flex items-center gap-1"
               >
                 Acceder
                 <FaChevronDown className={`w-2.5 h-2.5 transition-transform duration-200 ${openDropdown === 'acceder' ? 'rotate-180' : ''}`} />
@@ -174,10 +174,10 @@ export default function Navbar() {
                   >
                     {accederDropdown.map(item => {
                       const Icon = iconMap[item.icon]
-                      const cls = "flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-[#f0f8ff] transition-colors text-sm"
+                      const cls = "flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-[#F5F5F5] transition-colors text-sm"
                       const inner = (
                         <>
-                          <Icon className="w-4 h-4 text-[#0dcaf0]" />
+                          <Icon className="w-4 h-4 text-[#00AFF0]" />
                           <span>{item.label}</span>
                         </>
                       )
@@ -195,7 +195,7 @@ export default function Navbar() {
             {/* Cart Button */}
             <button
               onClick={toggleCart}
-              className="relative text-white/90 hover:text-[#0dcaf0] transition-colors p-2 ml-1"
+              className="relative text-white/90 hover:text-[#00AFF0] transition-colors p-2 ml-1"
               aria-label="Carrito de compras"
             >
               <FaShoppingCart className="w-5 h-5" />
@@ -213,7 +213,7 @@ export default function Navbar() {
                   setShowContactForm(!showContactForm)
                   setOpenDropdown(null)
                 }}
-                className="bg-gradient-to-r from-[#0dcaf0] to-[#0099cc] text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-[0_4px_25px_rgba(13,202,240,0.5)] transition-all duration-300 flex items-center gap-2"
+                className="bg-gradient-to-r from-[#00AFF0] to-[#10323F] text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-[0_4px_25px_rgba(13,202,240,0.5)] transition-all duration-300 flex items-center gap-2"
                 style={{ animation: 'pulse-glow 2s infinite' }}
               >
                 <FaPhone className="w-3 h-3" />
@@ -231,7 +231,7 @@ export default function Navbar() {
                     className="absolute right-0 mt-3 w-[380px] rounded-2xl shadow-2xl overflow-hidden z-50"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <div className="bg-gradient-to-br from-[#667eea] to-[#764ba2] p-5">
+                    <div className="bg-gradient-to-br from-[#572364] to-[#2E136E] p-5">
                       <div className="flex items-center justify-between mb-3">
                         <h5 className="text-white font-bold text-base">¡Nos Comunicamos Contigo!</h5>
                         <button onClick={() => setShowContactForm(false)} className="text-white/60 hover:text-white transition-colors">
@@ -273,7 +273,7 @@ export default function Navbar() {
                         </label>
 
                         <button type="submit"
-                          className="w-full py-2.5 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-[#f093fb] to-[#f5576c] hover:translate-y-[-2px] hover:shadow-[0_6px_20px_rgba(245,87,108,0.4)] transition-all duration-300">
+                          className="w-full py-2.5 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-[#FD3DB5] to-[#572364] hover:translate-y-[-2px] hover:shadow-[0_6px_20px_rgba(245,87,108,0.4)] transition-all duration-300">
                           Enviar
                         </button>
                       </form>
@@ -288,7 +288,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={toggleCart}
-              className="relative text-white/90 hover:text-[#0dcaf0] transition-colors p-2"
+              className="relative text-white/90 hover:text-[#00AFF0] transition-colors p-2"
               aria-label="Carrito de compras"
             >
               <FaShoppingCart className="w-5 h-5" />
@@ -323,7 +323,7 @@ export default function Navbar() {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsMobileOpen(false)}
-                  className="block text-white/90 hover:text-[#0dcaf0] py-2.5 text-sm font-semibold uppercase tracking-wider"
+                  className="block text-white/90 hover:text-[#00AFF0] py-2.5 text-sm font-semibold uppercase tracking-wider"
                 >
                   {link.label}
                 </Link>
@@ -333,7 +333,7 @@ export default function Navbar() {
               <div className="mt-2 pt-2 border-t border-white/10">
                 <button
                   onClick={() => setOpenDropdown(openDropdown === 'acceder' ? null : 'acceder')}
-                  className="text-white/90 hover:text-[#0dcaf0] w-full text-left text-sm font-semibold uppercase tracking-wider flex items-center gap-2 py-2.5"
+                  className="text-white/90 hover:text-[#00AFF0] w-full text-left text-sm font-semibold uppercase tracking-wider flex items-center gap-2 py-2.5"
                 >
                   Acceder
                   <FaChevronDown className={`w-2.5 h-2.5 transition-transform ${openDropdown === 'acceder' ? 'rotate-180' : ''}`} />
@@ -348,7 +348,7 @@ export default function Navbar() {
                     >
                       {accederDropdown.map(item => {
                         const Icon = iconMap[item.icon]
-                        const cls = "flex items-center gap-2 text-gray-300 hover:text-[#0dcaf0] py-1.5 text-sm"
+                        const cls = "flex items-center gap-2 text-gray-300 hover:text-[#00AFF0] py-1.5 text-sm"
                         const inner = (<><Icon className="w-3 h-3" />{item.label}</>)
                         return item.external ? (
                           <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileOpen(false)} className={cls}>{inner}</a>
@@ -363,7 +363,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => { setShowContactForm(!showContactForm); setIsMobileOpen(false) }}
-                className="w-full mt-3 mb-2 bg-gradient-to-r from-[#0dcaf0] to-[#0099cc] text-white px-4 py-2.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
+                className="w-full mt-3 mb-2 bg-gradient-to-r from-[#00AFF0] to-[#10323F] text-white px-4 py-2.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
               >
                 <FaPhone className="w-3 h-3" />
                 ¡Contáctanos!

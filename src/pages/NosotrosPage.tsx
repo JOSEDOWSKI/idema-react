@@ -32,10 +32,10 @@ export default function NosotrosPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#572364] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export default function NosotrosPage() {
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Sobre Nosotros</h1>
-          <p className="text-lg md:text-xl text-cyan-300 max-w-2xl">Transformando la educación técnica desde 1994</p>
+          <p className="text-lg md:text-xl text-[#00AFF0] max-w-2xl">Transformando la educación técnica desde 1994</p>
         </motion.div>
       </div>
 
@@ -66,7 +66,7 @@ export default function NosotrosPage() {
                 </p>
               </div>
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="space-y-4">
-                <div className="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl p-6 border-2 border-cyan-200">
+                <div className="bg-gradient-to-br from-[#00AFF0]/15 to-[#572364]/15 rounded-xl p-6 border-2 border-[#00AFF0]/30">
                   <p className="text-center">
                     <span className="text-5xl font-bold gradient-text">1994</span>
                   </p>
@@ -93,12 +93,12 @@ export default function NosotrosPage() {
           </motion.div>
 
           {/* Statistics */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-20 py-12 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-20 py-12 bg-gradient-to-r from-[#00AFF0]/10 to-[#572364]/10 rounded-xl p-12">
             <h2 className="text-3xl font-bold mb-12 text-center gradient-text">Nuestros Logros</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }} className="text-center">
-                  <stat.icon className="text-4xl text-cyan-600 mx-auto mb-4" />
+                  <stat.icon className="text-4xl text-[#00AFF0] mx-auto mb-4" />
                   <p className="text-5xl font-bold gradient-text mb-2">{stat.value}</p>
                   <p className="text-gray-700 font-semibold">{stat.label}</p>
                 </motion.div>
@@ -137,7 +137,7 @@ export default function NosotrosPage() {
               </motion.div>
               <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl border-2 border-blue-200">
                 <div className="flex items-center gap-4 mb-6">
-                  <FaLightbulb className="text-3xl text-blue-600" />
+                  <FaLightbulb className="text-3xl text-[#572364]" />
                   <h3 className="text-2xl font-bold text-gray-800">Visión</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
@@ -157,7 +157,7 @@ export default function NosotrosPage() {
                 <p className="text-gray-700 text-sm">30 años de actividad educativa, reconocida y licenciada por el MINEDU. Otorgamos títulos a nombre de la nación y certificados oficiales.</p>
               </motion.div>
               <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl border-2 border-blue-200 text-center">
-                <FaCertificate className="text-4xl text-blue-600 mx-auto mb-4" />
+                <FaCertificate className="text-4xl text-[#572364] mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-800 mb-3">Calidad</h3>
                 <p className="text-gray-700 text-sm">Certificación ISO 21001 y metodología innovadora que garantiza calidad educativa reconocida internacionalmente.</p>
               </motion.div>
@@ -175,14 +175,14 @@ export default function NosotrosPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {teamMembers.map((member, index) => (
                 <motion.div key={index} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }} whileHover={{ translateY: -10 }} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-                  <div className="h-48 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+                  <div className="h-48 bg-gradient-to-br from-[#00AFF0] to-[#572364] flex items-center justify-center">
                     <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                      <FaUsers className="text-4xl text-cyan-600" />
+                      <FaUsers className="text-4xl text-[#00AFF0]" />
                     </div>
                   </div>
                   <div className="p-6 text-center">
                     <h3 className="text-lg font-bold text-gray-800 mb-2">{member.name}</h3>
-                    <p className="text-cyan-600 font-semibold text-sm">{member.role}</p>
+                    <p className="text-[#00AFF0] font-semibold text-sm">{member.role}</p>
                   </div>
                 </motion.div>
               ))}
@@ -199,14 +199,14 @@ export default function NosotrosPage() {
                   <h3 className="text-lg font-bold text-gray-800 mb-2">{location.name}</h3>
                   <p className="text-gray-700 text-sm mb-1">{location.address}</p>
                   {location.hours && <p className="text-gray-500 text-xs">{location.hours}</p>}
-                  {location.phone && <p className="text-cyan-600 text-sm font-semibold mt-1">{location.phone}</p>}
+                  {location.phone && <p className="text-[#00AFF0] text-sm font-semibold mt-1">{location.phone}</p>}
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
           {/* Contact CTA */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-12 text-white text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="bg-gradient-to-r from-[#00AFF0] to-[#10323F] rounded-xl p-12 text-white text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">¿Quieres Conocer Más?</h2>
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
               Estamos aquí para responder tus preguntas y brindarte toda la información que necesitas sobre nuestros programas educativos.

@@ -24,7 +24,7 @@ export default function SectionTitle({ title, subtitle, light, className = '' }:
           {subtitle}
         </p>
       )}
-      <div className={`w-24 h-1 mx-auto mt-4 rounded-full ${light ? 'bg-white/50' : 'bg-gradient-to-r from-[#0dcaf0] to-[#0099cc]'}`} />
+      <div className={`w-24 h-1 mx-auto mt-4 rounded-full ${light ? 'bg-white/50' : 'bg-gradient-to-r from-[#00AFF0] to-[#10323F]'}`} />
     </motion.div>
   )
 }

@@ -29,7 +29,7 @@ export default function EliminarCuentaPage() {
         <meta name="description" content="Solicitar la eliminación de tu cuenta y datos personales en IDEMA" />
       </Helmet>
 
-      <div className="relative h-72 overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-72 overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function EliminarCuentaPage() {
         >
           <FaTrash className="text-4xl text-red-400 mb-4" />
           <h1 className="text-4xl font-bold mb-2">Eliminar Cuenta</h1>
-          <p className="text-cyan-300 text-sm">Solicitud de eliminación de datos personales</p>
+          <p className="text-[#00AFF0] text-sm">Solicitud de eliminación de datos personales</p>
         </motion.div>
       </div>
 
@@ -61,14 +61,14 @@ export default function EliminarCuentaPage() {
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-1">Correo Electrónico registrado *</label>
                   <input type="email" value={email} onChange={e => setEmail(e.target.value)} maxLength={100}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none"
                     placeholder="tu-email@ejemplo.com" />
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-1">Motivo (opcional)</label>
                   <textarea value={motivo} onChange={e => setMotivo(e.target.value)} rows={3} maxLength={500}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 outline-none resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#00AFF0]/50 focus:ring-2 focus:ring-[#00AFF0]/15 outline-none resize-none"
                     placeholder="¿Por qué deseas eliminar tu cuenta?" />
                 </div>
 

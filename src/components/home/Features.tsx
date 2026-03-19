@@ -42,7 +42,7 @@ export default function Features() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <div className="inline-block bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 px-6 py-3 rounded-full font-bold text-lg">
+          <div className="inline-block bg-gradient-to-r from-[#00AFF0]/15 to-[#572364]/15 text-[#10323F] px-6 py-3 rounded-full font-bold text-lg">
             +300 Cursos en Línea
           </div>
         </motion.div>
@@ -65,11 +65,11 @@ export default function Features() {
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="bg-gradient-to-br from-cyan-100 to-blue-100 p-4 rounded-full mb-4 group-hover:shadow-lg transition-shadow"
+                  className="bg-gradient-to-br from-[#00AFF0]/15 to-[#572364]/15 p-4 rounded-full mb-4 group-hover:shadow-lg transition-shadow"
                 >
-                  <Icon className="text-3xl text-cyan-600" />
+                  <Icon className="text-3xl text-[#00AFF0]" />
                 </motion.div>
-                <p className="text-gray-700 font-semibold text-sm sm:text-base group-hover:text-cyan-600 transition-colors">
+                <p className="text-gray-700 font-semibold text-sm sm:text-base group-hover:text-[#00AFF0] transition-colors">
                   {feature.text}
                 </p>
               </motion.div>
