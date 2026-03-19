@@ -43,7 +43,7 @@ export default function CartDrawer() {
             className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-[61] flex flex-col"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#10323F] to-[#2E136E] p-5 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-dark to-deep p-5 flex items-center justify-between">
               <div className="flex items-center gap-3 text-white">
                 <FaShoppingCart className="text-xl" />
                 <h2 className="text-lg font-bold">Carrito de Compras</h2>
@@ -64,7 +64,7 @@ export default function CartDrawer() {
             {/* Items */}
             <div className="flex-1 overflow-y-auto p-4">
               {items.length === 0 ? (
-                <div className="flex flex-col items-center justify-center h-full text-gray-400">
+                <div className="flex flex-col items-center justify-center h-full text-deep/50">
                   <FaShoppingCart className="text-6xl mb-4 opacity-30" />
                   <p className="text-lg font-semibold">Tu carrito está vacío</p>
                   <p className="text-sm mt-1">Explora nuestros cursos y programas</p>
@@ -78,11 +78,11 @@ export default function CartDrawer() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, x: 100 }}
-                      className="bg-gray-50 rounded-xl p-4 border border-gray-100"
+                      className="bg-surface rounded-xl p-4 border border-deep/10"
                     >
                       <div className="flex gap-3">
                         {/* Thumbnail */}
-                        <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                        <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface">
                           <img
                             src={item.product.image}
                             alt={item.product.title}
@@ -92,13 +92,13 @@ export default function CartDrawer() {
 
                         {/* Info */}
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-gray-800 text-sm leading-tight truncate">
+                          <h3 className="font-semibold text-deep text-sm leading-tight truncate">
                             {item.product.title}
                           </h3>
-                          <p className="text-xs text-gray-500 mt-0.5">
+                          <p className="text-xs text-deep/70 mt-0.5">
                             {item.product.duration} • {item.modality || item.product.modality}
                           </p>
-                          <p className="text-[#00AFF0] font-bold mt-1">
+                          <p className="text-primary font-bold mt-1">
                             S/.{item.price.toFixed(2)}
                           </p>
                         </div>
@@ -106,30 +106,30 @@ export default function CartDrawer() {
                         {/* Remove */}
                         <button
                           onClick={() => removeItem(item.product.slug)}
-                          className="text-gray-400 hover:text-red-500 transition-colors p-1 self-start"
+                          className="text-deep/50 hover:text-cta transition-colors p-1 self-start"
                         >
                           <FaTrash className="text-sm" />
                         </button>
                       </div>
 
                       {/* Quantity */}
-                      <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-200">
+                      <div className="flex items-center justify-between mt-3 pt-3 border-t border-deep/10">
                         <div className="flex items-center gap-3">
                           <button
                             onClick={() => updateQuantity(item.product.slug, item.quantity - 1)}
-                            className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-colors"
+                            className="w-7 h-7 rounded-full bg-surface hover:bg-surface flex items-center justify-center transition-colors"
                           >
                             <FaMinus className="text-[10px]" />
                           </button>
-                          <span className="font-semibold text-gray-800 w-6 text-center">{item.quantity}</span>
+                          <span className="font-semibold text-deep w-6 text-center">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.product.slug, item.quantity + 1)}
-                            className="w-7 h-7 rounded-full bg-[#00AFF0]/15 hover:bg-[#00AFF0]/25 text-[#10323F] flex items-center justify-center transition-colors"
+                            className="w-7 h-7 rounded-full bg-primary/15 hover:bg-primary/25 text-dark flex items-center justify-center transition-colors"
                           >
                             <FaPlus className="text-[10px]" />
                           </button>
                         </div>
-                        <span className="font-bold text-gray-800">
+                        <span className="font-bold text-deep">
                           S/.{(item.price * item.quantity).toFixed(2)}
                         </span>
                       </div>
@@ -141,11 +141,11 @@ export default function CartDrawer() {
 
             {/* Footer */}
             {items.length > 0 && (
-              <div className="border-t border-gray-200 p-5 space-y-4">
+              <div className="border-t border-deep/10 p-5 space-y-4">
                 {/* Total */}
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600 font-semibold">Total:</span>
-                  <span className="text-2xl font-bold text-gray-900">S/.{totalPrice.toFixed(2)}</span>
+                  <span className="text-deep/80 font-semibold">Total:</span>
+                  <span className="text-2xl font-bold text-deep">S/.{totalPrice.toFixed(2)}</span>
                 </div>
 
                 {/* Checkout Button */}
@@ -153,7 +153,7 @@ export default function CartDrawer() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={handleCheckout}
-                  className="w-full py-4 bg-gradient-to-r from-[#00AFF0] to-[#10323F] text-white font-bold rounded-xl flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-[#00AFF0]/30 transition-all duration-300"
+                  className="w-full py-4 bg-gradient-to-r from-primary to-dark text-white font-bold rounded-xl flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
                 >
                   <FaCreditCard className="text-lg" />
                   Pagar con Culqi
@@ -162,7 +162,7 @@ export default function CartDrawer() {
                 {/* Clear */}
                 <button
                   onClick={clearCart}
-                  className="w-full text-center text-sm text-gray-400 hover:text-red-500 transition-colors"
+                  className="w-full text-center text-sm text-deep/50 hover:text-cta transition-colors"
                 >
                   Vaciar carrito
                 </button>

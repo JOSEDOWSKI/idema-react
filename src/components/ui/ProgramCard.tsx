@@ -27,20 +27,20 @@ export default function ProgramCard({ program, basePath, index = 0 }: Props) {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="absolute bottom-3 left-3 bg-[#00AFF0]/90 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
+            <span className="absolute bottom-3 left-3 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
               {program.duration}
             </span>
           </div>
           <div className="p-5">
-            <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-[#00AFF0] transition-colors">
+            <h3 className="font-bold text-lg text-deep mb-2 group-hover:text-primary transition-colors">
               {program.title}
             </h3>
-            <p className="text-gray-600 text-sm line-clamp-2 mb-3">
+            <p className="text-deep/80 text-sm line-clamp-2 mb-3">
               {program.description}
             </p>
             <div className="flex items-center justify-between">
-              <span className="text-xs text-gray-500">{program.modality}</span>
-              <span className="text-[#00AFF0] font-semibold text-sm group-hover:translate-x-1 transition-transform">
+              <span className="text-xs text-deep/70">{program.modality}</span>
+              <span className="text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform">
                 Ver más →
               </span>
             </div>

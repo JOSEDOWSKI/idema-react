@@ -25,10 +25,10 @@ export default function CompaniesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mb-4">
             Empresas que confían en nosotros
           </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-[#00AFF0] to-[#572364] rounded-full mx-auto"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto"></div>
         </motion.div>
 
         {/* Infinite scroll carousel */}
@@ -49,7 +49,7 @@ export default function CompaniesSection() {
                 key={`first-${index}`}
                 className="flex-shrink-0 w-40 sm:w-48 lg:w-56 h-24 flex items-center justify-center"
               >
-                <div className="bg-gray-50 rounded-xl p-4 w-full h-full flex items-center justify-center hover:bg-gray-100 transition-colors group">
+                <div className="bg-surface rounded-xl p-4 w-full h-full flex items-center justify-center hover:bg-surface transition-colors group">
                   <img
                     src={company.logo}
                     alt={company.name}
@@ -58,7 +58,7 @@ export default function CompaniesSection() {
                       ;(e.target as HTMLImageElement).style.display = 'none'
                       const parent = (e.target as HTMLImageElement).parentElement
                       if (parent) {
-                        parent.innerHTML = `<span class="text-center text-gray-400 text-xs font-semibold px-2">${company.name}</span>`
+                        parent.innerHTML = `<span class="text-center text-deep/50 text-xs font-semibold px-2">${company.name}</span>`
                       }
                     }}
                   />
@@ -71,7 +71,7 @@ export default function CompaniesSection() {
                 key={`second-${index}`}
                 className="flex-shrink-0 w-40 sm:w-48 lg:w-56 h-24 flex items-center justify-center"
               >
-                <div className="bg-gray-50 rounded-xl p-4 w-full h-full flex items-center justify-center hover:bg-gray-100 transition-colors group">
+                <div className="bg-surface rounded-xl p-4 w-full h-full flex items-center justify-center hover:bg-surface transition-colors group">
                   <img
                     src={company.logo}
                     alt={company.name}
@@ -80,7 +80,7 @@ export default function CompaniesSection() {
                       ;(e.target as HTMLImageElement).style.display = 'none'
                       const parent = (e.target as HTMLImageElement).parentElement
                       if (parent) {
-                        parent.innerHTML = `<span class="text-center text-gray-400 text-xs font-semibold px-2">${company.name}</span>`
+                        parent.innerHTML = `<span class="text-center text-deep/50 text-xs font-semibold px-2">${company.name}</span>`
                       }
                     }}
                   />

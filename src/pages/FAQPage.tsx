@@ -109,10 +109,10 @@ export default function FAQPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-[#10323F] to-[#2E136E]">
+      <div className="relative h-96 md:h-[500px] overflow-hidden bg-gradient-to-br from-dark to-deep">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-[#00AFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#572364] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <motion.div
@@ -122,7 +122,7 @@ export default function FAQPage() {
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Preguntas Frecuentes</h1>
-          <p className="text-lg md:text-xl text-[#00AFF0] max-w-2xl">Encuentra respuestas a todas tus dudas</p>
+          <p className="text-lg md:text-xl text-primary max-w-2xl">Encuentra respuestas a todas tus dudas</p>
         </motion.div>
       </div>
 
@@ -137,13 +137,13 @@ export default function FAQPage() {
             className="mb-12"
           >
             <div className="relative">
-              <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg" />
+              <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-deep/50 text-lg" />
               <input
                 type="text"
                 placeholder="Busca una pregunta..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-6 py-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#00AFF0] transition-colors text-lg"
+                className="w-full pl-12 pr-6 py-4 border-2 border-deep/15 rounded-lg focus:outline-none focus:border-primary transition-colors text-lg"
               />
             </div>
           </motion.div>
@@ -163,8 +163,8 @@ export default function FAQPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full font-semibold transition-all ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-[#00AFF0] to-[#572364] text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg'
+                    : 'bg-surface text-deep hover:bg-surface'
                 }`}
               >
                 {category}
@@ -188,23 +188,23 @@ export default function FAQPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#00AFF0]/40 transition-colors"
+                    className="border-2 border-deep/10 rounded-lg overflow-hidden hover:border-primary/40 transition-colors"
                   >
                     <motion.button
                       onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
-                      className="w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition-colors text-left"
+                      className="w-full px-6 py-4 flex items-center justify-between bg-surface hover:bg-surface transition-colors text-left"
                     >
                       <div>
-                        <span className="inline-block px-3 py-1 bg-[#00AFF0]/15 text-[#10323F] text-xs font-semibold rounded-full mr-4 mb-2">
+                        <span className="inline-block px-3 py-1 bg-primary/15 text-dark text-xs font-semibold rounded-full mr-4 mb-2">
                           {item.category}
                         </span>
-                        <h3 className="text-lg font-semibold text-gray-800">{item.question}</h3>
+                        <h3 className="text-lg font-semibold text-deep">{item.question}</h3>
                       </div>
                       <motion.div
                         animate={{ rotate: expandedId === item.id ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <FaChevronDown className="text-[#00AFF0] text-xl flex-shrink-0 ml-4" />
+                        <FaChevronDown className="text-primary text-xl flex-shrink-0 ml-4" />
                       </motion.div>
                     </motion.button>
 
@@ -217,8 +217,8 @@ export default function FAQPage() {
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
                         >
-                          <div className="px-6 py-4 bg-white border-t-2 border-gray-200">
-                            <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                          <div className="px-6 py-4 bg-white border-t-2 border-deep/10">
+                            <p className="text-deep leading-relaxed">{item.answer}</p>
                           </div>
                         </motion.div>
                       )}
@@ -232,8 +232,8 @@ export default function FAQPage() {
                   transition={{ duration: 0.3 }}
                   className="text-center py-12"
                 >
-                  <p className="text-xl text-gray-600">No encontramos respuestas para tu búsqueda.</p>
-                  <p className="text-gray-500 mt-2">Intenta con otros términos o contacta con nosotros.</p>
+                  <p className="text-xl text-deep/80">No encontramos respuestas para tu búsqueda.</p>
+                  <p className="text-deep/70 mt-2">Intenta con otros términos o contacta con nosotros.</p>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -245,7 +245,7 @@ export default function FAQPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 bg-gradient-to-r from-[#00AFF0] to-[#10323F] rounded-xl p-12 text-white text-center"
+            className="mt-16 bg-gradient-to-r from-primary to-dark rounded-xl p-12 text-white text-center"
           >
             <h2 className="text-3xl font-bold mb-4">¿No encontraste tu respuesta?</h2>
             <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
@@ -256,7 +256,7 @@ export default function FAQPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-[#00AFF0] font-bold rounded-full hover:shadow-lg transition-all duration-300"
+                className="px-8 py-4 bg-white text-primary font-bold rounded-full hover:shadow-lg transition-all duration-300"
               >
                 Contactar Ahora
               </motion.button>

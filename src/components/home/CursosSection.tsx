@@ -7,7 +7,7 @@ export default function CursosSection() {
   const { ref, inView } = useInView({ triggerOnce: true })
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <section ref={ref} className="py-16 sm:py-20 lg:py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
@@ -16,13 +16,13 @@ export default function CursosSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mb-3 sm:mb-4">
             Cursos Cortos
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-deep/80">
             4 semanas de capacitación intensiva
           </p>
-          <div className="h-1 w-16 bg-gradient-to-r from-[#00AFF0] to-[#572364] rounded-full mx-auto mt-4"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-4"></div>
         </motion.div>
 
         {/* Courses grid */}
@@ -48,14 +48,14 @@ export default function CursosSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-4 flex-1 flex flex-col">
-                    <h3 className="font-bold text-sm sm:text-base text-gray-900 mb-2 line-clamp-2 group-hover:text-[#00AFF0] transition-colors">
+                    <h3 className="font-bold text-sm sm:text-base text-deep mb-2 line-clamp-2 group-hover:text-primary transition-colors">
                       {curso.title}
                     </h3>
-                    <p className="text-xs text-gray-500 mb-3">
+                    <p className="text-xs text-deep/70 mb-3">
                       {curso.duration}
                     </p>
                     <div className="mt-auto">
-                      <span className="text-[#00AFF0] font-semibold text-xs group-hover:translate-x-1 transition-transform inline-block">
+                      <span className="text-primary font-semibold text-xs group-hover:translate-x-1 transition-transform inline-block">
                         Ver Curso →
                       </span>
                     </div>

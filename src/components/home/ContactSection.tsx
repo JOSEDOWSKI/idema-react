@@ -117,7 +117,7 @@ export default function ContactSection() {
     <section
       id="contacto"
       ref={ref}
-      className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-[#572364] to-[#2E136E]"
+      className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-accent to-deep"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -148,7 +148,7 @@ export default function ContactSection() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg"
+                  className="bg-primary/10 border border-primary/30 text-deep px-4 py-3 rounded-lg"
                 >
                   ¡Gracias por tu mensaje! Nos contactaremos pronto.
                 </motion.div>
@@ -166,12 +166,12 @@ export default function ContactSection() {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="Tu nombre"
-                    className={`w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00AFF0] transition ${
-                      errors.firstName ? 'ring-2 ring-red-400' : ''
+                    className={`w-full px-4 py-3 rounded-lg bg-white/90 text-deep placeholder-deep/50 focus:outline-none focus:ring-2 focus:ring-primary transition ${
+                      errors.firstName ? 'ring-2 ring-cta' : ''
                     }`}
                   />
                   {errors.firstName && (
-                    <p className="text-red-200 text-xs mt-1">
+                    <p className="text-cta text-xs mt-1">
                       {errors.firstName}
                     </p>
                   )}
@@ -186,12 +186,12 @@ export default function ContactSection() {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Tu apellido"
-                    className={`w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00AFF0] transition ${
-                      errors.lastName ? 'ring-2 ring-red-400' : ''
+                    className={`w-full px-4 py-3 rounded-lg bg-white/90 text-deep placeholder-deep/50 focus:outline-none focus:ring-2 focus:ring-primary transition ${
+                      errors.lastName ? 'ring-2 ring-cta' : ''
                     }`}
                   />
                   {errors.lastName && (
-                    <p className="text-red-200 text-xs mt-1">
+                    <p className="text-cta text-xs mt-1">
                       {errors.lastName}
                     </p>
                   )}
@@ -208,7 +208,7 @@ export default function ContactSection() {
                     name="countryCode"
                     value={formData.countryCode}
                     onChange={handleChange}
-                    className="px-3 py-3 rounded-lg bg-white/90 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#00AFF0] transition"
+                    className="px-3 py-3 rounded-lg bg-white/90 text-deep focus:outline-none focus:ring-2 focus:ring-primary transition"
                   >
                     <option value="51">🇵🇪 +51</option>
                     <option value="1">🇺🇸 +1</option>
@@ -220,13 +220,13 @@ export default function ContactSection() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="123456789"
-                    className={`flex-1 px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00AFF0] transition ${
-                      errors.phone ? 'ring-2 ring-red-400' : ''
+                    className={`flex-1 px-4 py-3 rounded-lg bg-white/90 text-deep placeholder-deep/50 focus:outline-none focus:ring-2 focus:ring-primary transition ${
+                      errors.phone ? 'ring-2 ring-cta' : ''
                     }`}
                   />
                 </div>
                 {errors.phone && (
-                  <p className="text-red-200 text-xs mt-1">{errors.phone}</p>
+                  <p className="text-cta text-xs mt-1">{errors.phone}</p>
                 )}
               </div>
 
@@ -241,12 +241,12 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="tu@email.com"
-                  className={`w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00AFF0] transition ${
-                    errors.email ? 'ring-2 ring-red-400' : ''
+                  className={`w-full px-4 py-3 rounded-lg bg-white/90 text-deep placeholder-deep/50 focus:outline-none focus:ring-2 focus:ring-primary transition ${
+                    errors.email ? 'ring-2 ring-cta' : ''
                   }`}
                 />
                 {errors.email && (
-                  <p className="text-red-200 text-xs mt-1">{errors.email}</p>
+                  <p className="text-cta text-xs mt-1">{errors.email}</p>
                 )}
               </div>
 
@@ -261,12 +261,12 @@ export default function ContactSection() {
                   onChange={handleChange}
                   placeholder="Cuéntanos sobre tu interés..."
                   rows={4}
-                  className={`w-full px-4 py-3 rounded-lg bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00AFF0] transition resize-none ${
-                    errors.comment ? 'ring-2 ring-red-400' : ''
+                  className={`w-full px-4 py-3 rounded-lg bg-white/90 text-deep placeholder-deep/50 focus:outline-none focus:ring-2 focus:ring-primary transition resize-none ${
+                    errors.comment ? 'ring-2 ring-cta' : ''
                   }`}
                 />
                 {errors.comment && (
-                  <p className="text-red-200 text-xs mt-1">{errors.comment}</p>
+                  <p className="text-cta text-xs mt-1">{errors.comment}</p>
                 )}
               </div>
 
@@ -290,7 +290,7 @@ export default function ContactSection() {
                 </label>
               </div>
               {errors.acceptPolicies && (
-                <p className="text-red-200 text-xs">{errors.acceptPolicies}</p>
+                <p className="text-cta text-xs">{errors.acceptPolicies}</p>
               )}
 
               {/* Submit button */}
@@ -299,7 +299,7 @@ export default function ContactSection() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-3 sm:py-4 bg-gradient-to-r from-[#FD3DB5] to-[#572364] text-white font-bold rounded-lg hover:shadow-lg hover:shadow-[#FD3DB5]/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 sm:py-4 bg-gradient-to-r from-cta to-accent text-white font-bold rounded-lg hover:shadow-lg hover:shadow-cta/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
               </motion.button>
@@ -314,7 +314,7 @@ export default function ContactSection() {
             className="space-y-6 sm:space-y-8"
           >
             {/* Map placeholder */}
-            <div className="rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 lg:h-96 bg-gray-300">
+            <div className="rounded-2xl overflow-hidden shadow-xl h-64 sm:h-72 lg:h-96 bg-surface">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.4651159437463!2d-71.5366!3d-16.3894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sIDEMA!5e0!3m2!1ses!2spe!4v"
                 width="100%"
@@ -334,7 +334,7 @@ export default function ContactSection() {
                 whileHover={{ x: 5 }}
                 className="flex gap-4 p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition"
               >
-                <MdLocationOn className="text-[#00AFF0] text-2xl flex-shrink-0 mt-1" />
+                <MdLocationOn className="text-primary text-2xl flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-white">Dirección</p>
                   <p className="text-white/80 text-sm">
@@ -348,7 +348,7 @@ export default function ContactSection() {
                 whileHover={{ x: 5 }}
                 className="flex gap-4 p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition"
               >
-                <MdPhone className="text-[#00AFF0] text-2xl flex-shrink-0 mt-1" />
+                <MdPhone className="text-primary text-2xl flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-white">Teléfono</p>
                   <a
@@ -365,7 +365,7 @@ export default function ContactSection() {
                 whileHover={{ x: 5 }}
                 className="flex gap-4 p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition"
               >
-                <MdEmail className="text-[#00AFF0] text-2xl flex-shrink-0 mt-1" />
+                <MdEmail className="text-primary text-2xl flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-white">Email</p>
                   <a
