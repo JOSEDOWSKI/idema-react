@@ -1,144 +1,83 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { IoChevronDown } from 'react-icons/io5'
-import { useInView } from 'react-intersection-observer'
-
-const typingMessages = [
-  'Estamos Transformando la Educación que Conoces',
-  'Formando Profesionales del Futuro',
-  'Educación de Calidad y Accesible',
+import { useState, useEffect, useCallback } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+const desktopImages = [
+  '/assets/img/hero/desktop/PRINCIPAL _1.jpeg',
+  '/assets/img/hero/desktop/ADMI_EMPRESAS_1.jpeg',
+  '/assets/img/hero/desktop/AGROPECUARIA_1.jpeg',
+  '/assets/img/hero/desktop/CONTABILIDAD_1.jpeg',
+  '/assets/img/hero/desktop/ENFERMERIA_1.jpeg',
 ]
 
+const mobileImages = [
+  '/assets/img/hero/mobile/PRINCIPAL_2.jpeg',
+  '/assets/img/hero/mobile/ADMI_EMPRESAS_2.jpeg',
+  '/assets/img/hero/mobile/AGROPECUARIA_2.jpeg',
+  '/assets/img/hero/mobile/CONTABILIDAD_2.jpeg',
+  '/assets/img/hero/mobile/ENFERMERIA_2.jpeg',
+]
+
+const INTERVAL = 4000
+
 export default function Hero() {
-  const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
-  const [displayedText, setDisplayedText] = useState('')
-  const [isTyping, setIsTyping] = useState(true)
-  const { ref, inView } = useInView({ triggerOnce: true })
+  const [current, setCurrent] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const currentMessage = typingMessages[currentMessageIndex]
-    let timeout: ReturnType<typeof setTimeout>
+    const mq = window.matchMedia('(max-width: 768px)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
-    if (isTyping) {
-      if (displayedText.length < currentMessage.length) {
-        timeout = setTimeout(() => {
-          setDisplayedText(currentMessage.slice(0, displayedText.length + 1))
-        }, 50)
-      } else {
-        timeout = setTimeout(() => {
-          setIsTyping(false)
-        }, 3000)
-      }
-    } else {
-      if (displayedText.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayedText(displayedText.slice(0, -1))
-        }, 30)
-      } else {
-        setCurrentMessageIndex((prev) => (prev + 1) % typingMessages.length)
-        setIsTyping(true)
-      }
-    }
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % desktopImages.length)
+  }, [])
 
-    return () => clearTimeout(timeout)
-  }, [displayedText, isTyping, currentMessageIndex])
+  useEffect(() => {
+    const timer = setInterval(next, INTERVAL)
+    return () => clearInterval(timer)
+  }, [next])
+
+  const images = isMobile ? mobileImages : desktopImages
 
   return (
-    <div
-      ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]"
-    >
-      {/* Animated background gradient overlay */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background slider */}
+      <AnimatePresence mode="popLayout">
+        <motion.img
+          key={current}
+          src={images[current]}
+          alt=""
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading={current === 0 ? 'eager' : 'lazy'}
+        />
+      </AnimatePresence>
+
+      {/* Dark overlay - brand colors */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#10323F]/75 via-[#10323F]/50 to-[#2E136E]/60" />
+
+      
+
+      {/* Dots indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-3">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrent(index)}
+            aria-label={`Ir a imagen ${index + 1}`}
+            className={`rounded-full transition-all duration-300 ${
+              index === current
+                ? 'w-8 h-3 bg-[#00AFF0]'
+                : 'w-3 h-3 bg-white/50 hover:bg-white/80'
+            }`}
+          />
+        ))}
       </div>
-
-      {/* Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl"
-      >
-        {/* Glassmorphism container */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-8 sm:p-12 lg:p-16 mb-8"
-        >
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-cyan-300 text-sm sm:text-base font-semibold tracking-widest uppercase mb-4"
-          >
-            BIENVENIDO A IDEMA
-          </motion.p>
-
-          {/* Main Title */}
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
-          >
-            Estamos Transformando <br /> la Educación que Conoces
-          </motion.h1>
-
-          {/* Typing effect */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="h-8 flex items-center justify-center mb-8"
-          >
-            <p className="text-lg sm:text-xl text-cyan-300">
-              {displayedText}
-              <span className="animate-pulse">|</span>
-            </p>
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link to="#carreras">
-              <button className="px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
-                Ver Carreras
-              </button>
-            </Link>
-            <a href="/orientacion-vocacional">
-              <button className="px-8 py-3 sm:py-4 backdrop-blur-md bg-white/10 border border-white/30 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                Orientación Vocacional
-              </button>
-            </a>
-          </motion.div>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex flex-col items-center"
-        >
-          <span className="text-white/60 text-sm mb-2">Desplázate</span>
-          <IoChevronDown className="text-cyan-300 text-2xl" />
-        </motion.div>
-      </motion.div>
-    </div>
+    </section>
   )
 }
