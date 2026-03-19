@@ -51,7 +51,7 @@ export default function Footer() {
         >
           {/* Logo and Description */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <img src="/assets/img/navbar-logo.png" alt="IDEMA" className="h-12 w-auto mb-4" />
+            <img src="/assets/img/idema-white.png" alt="IDEMA" className="h-12 w-auto mb-4" />
             <p className="text-white/80 text-sm leading-relaxed mb-6">
               Instituto IDEMA: Formando profesionales de excelencia en educación técnica y superior.
             </p>
@@ -65,7 +65,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#00AFF0] flex items-center justify-center transition-colors"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors"
                   >
                     <Icon className="w-5 h-5" />
                   </a>
@@ -85,14 +85,14 @@ export default function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/80 hover:text-[#00AFF0] transition-colors text-sm"
+                      className="text-white/80 hover:text-primary transition-colors text-sm"
                     >
                       {link.label}
                     </a>
                   ) : (
                     <Link
                       to={link.href}
-                      className="text-white/80 hover:text-[#00AFF0] transition-colors text-sm"
+                      className="text-white/80 hover:text-primary transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -110,7 +110,7 @@ export default function Footer() {
                 <li key={career.href}>
                   <Link
                     to={career.href}
-                    className="text-white/80 hover:text-[#00AFF0] transition-colors text-sm"
+                    className="text-white/80 hover:text-primary transition-colors text-sm"
                   >
                     {career.label}
                   </Link>
@@ -130,14 +130,14 @@ export default function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/80 hover:text-[#00AFF0] transition-colors text-sm"
+                      className="text-white/80 hover:text-primary transition-colors text-sm"
                     >
                       {item.label}
                     </a>
                   ) : (
                     <Link
                       to={item.href}
-                      className="text-white/80 hover:text-[#00AFF0] transition-colors text-sm"
+                      className="text-white/80 hover:text-primary transition-colors text-sm"
                     >
                       {item.label}
                     </Link>
@@ -160,9 +160,9 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {footerLinks.contact.addresses.map((addr, idx) => (
               <div key={idx} className="flex gap-3">
-                <FaMapMarkerAlt className="w-5 h-5 text-[#00AFF0] flex-shrink-0 mt-0.5" />
+                <FaMapMarkerAlt className="w-5 h-5 text-surface flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-semibold text-[#00AFF0]">{addr.label}</p>
+                  <p className="text-sm font-semibold text-surface">{addr.label}</p>
                   <p className="text-white/80 text-sm">{addr.value}</p>
                 </div>
               </div>
@@ -171,18 +171,18 @@ export default function Footer() {
 
           <div className="mt-6 flex flex-col md:flex-row gap-6">
             <div className="flex gap-3">
-              <FaPhone className="w-5 h-5 text-[#00AFF0] flex-shrink-0 mt-0.5" />
+              <FaPhone className="w-5 h-5 text-surface flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-semibold text-[#00AFF0]">Teléfono</p>
+                <p className="text-sm font-semibold text-surface">Teléfono</p>
                 <p className="text-white/80 text-sm">{footerLinks.contact.phone}</p>
               </div>
             </div>
 
             <div className="flex gap-3">
-              <FaEnvelope className="w-5 h-5 text-[#00AFF0] flex-shrink-0 mt-0.5" />
+              <FaEnvelope className="w-5 h-5 text-surface flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-semibold text-[#00AFF0]">Email</p>
-                <a href={`mailto:${footerLinks.contact.email}`} className="text-white/80 hover:text-[#00AFF0] text-sm transition-colors">
+                <p className="text-sm font-semibold text-surface">Email</p>
+                <a href={`mailto:${footerLinks.contact.email}`} className="text-white/80 hover:text-primary text-sm transition-colors">
                   {footerLinks.contact.email}
                 </a>
               </div>
@@ -202,16 +202,16 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Instituto IDEMA. Todos los derechos reservados.
           </p>
           <div className="flex flex-wrap gap-4 md:gap-6 text-white/70 text-sm">
-            <Link to="/politica-privacidad" className="hover:text-[#00AFF0] transition-colors">
+            <Link to="/politica-privacidad" className="hover:text-primary transition-colors">
               Políticas de Privacidad
             </Link>
-            <Link to="/terminos-y-condiciones" className="hover:text-[#00AFF0] transition-colors">
+            <Link to="/terminos-y-condiciones" className="hover:text-primary transition-colors">
               Términos y Condiciones
             </Link>
-            <Link to="/libro-reclamaciones" className="hover:text-[#00AFF0] transition-colors">
+            <Link to="/libro-reclamaciones" className="hover:text-primary transition-colors">
               Libro de Reclamaciones
             </Link>
-            <Link to="/eliminar-cuenta" className="hover:text-[#00AFF0] transition-colors">
+            <Link to="/eliminar-cuenta" className="hover:text-primary transition-colors">
               Eliminar Cuenta
             </Link>
           </div>
