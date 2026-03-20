@@ -9,8 +9,8 @@ const slides = [
     mobile:  '/assets/img/hero/mobile/PRINCIPAL_2.jpeg',
     titulo:    'Instituto IDEMA',
     subtitulo: 'Más de 30 años transformando la educación técnica en el Perú',
-    cta:       'Conoce nuestras carreras',
-    ctaLink:   '/#carreras',
+    cta:       'Conoce nuestros programas',
+    ctaLink:   '/programas',
   },
   {
     desktop: '/assets/img/hero/desktop/ADMI_EMPRESAS_1.jpeg',
@@ -42,7 +42,7 @@ const slides = [
     titulo:    'Enfermería Técnica',
     subtitulo: 'Forma parte del equipo de salud que el Perú necesita',
     cta:       'Ver carrera',
-    ctaLink:   '/carreras/enfermeria-tecnica',
+    ctaLink:   '/carreras/enfermeria',
   },
 ]
 

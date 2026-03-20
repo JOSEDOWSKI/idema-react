@@ -1,10 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import Hero from '../components/home/Hero'
 import Features from '../components/home/Features'
-import CarrerasSection from '../components/home/CarrerasSection'
-import AuxiliaresSection from '../components/home/AuxiliaresSection'
-import EspecializacionesSection from '../components/home/EspecializacionesSection'
-import CursosSection from '../components/home/CursosSection'
+import ProgramasSection from '../components/home/ProgramasSection'
+import NewsSection from '../components/home/NewsSection'
 import ValuesSection from '../components/home/ValuesSection'
 import TestimonialsSection from '../components/home/TestimonialsSection'
 import CompaniesSection from '../components/home/CompaniesSection'
@@ -19,10 +17,8 @@ export default function Home() {
       </Helmet>
       <Hero />
       <Features />
-      <CarrerasSection />
-      <AuxiliaresSection />
-      <EspecializacionesSection />
-      <CursosSection />
+      <ProgramasSection />
+      <NewsSection />
       <ValuesSection />
       <TestimonialsSection />
       <CompaniesSection />

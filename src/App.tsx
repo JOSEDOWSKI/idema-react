@@ -21,6 +21,8 @@ const EliminarCuentaPage = lazy(() => import('./pages/EliminarCuentaPage'))
 const CursosGratisPage = lazy(() => import('./pages/CursosGratisPage'))
 const IdemaEducaPage = lazy(() => import('./pages/IdemaEducaPage'))
 const OrientacionVocacionalPage = lazy(() => import('./pages/OrientacionVocacionalPage'))
+const NoticiasPage = lazy(() => import('./pages/NoticiasPage'))
+const ProgramasPage = lazy(() => import('./pages/ProgramasPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          {/* Programas */}
+          <Route path="programas" element={<ProgramasPage />} />
           {/* Carreras */}
           <Route path="carreras/:slug" element={<CarreraPage />} />
           {/* Auxiliares */}
@@ -49,6 +53,7 @@ function App() {
           <Route path="testimonios" element={<TestimoniosPage />} />
           <Route path="franquiciate" element={<FranquiciatePage />} />
           <Route path="investigacion" element={<InvestigacionPage />} />
+          <Route path="noticias" element={<NoticiasPage />} />
           {/* Legal */}
           <Route path="politica-privacidad" element={<LegalPage />} />
           <Route path="terminos-y-condiciones" element={<LegalPage />} />
