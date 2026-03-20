@@ -1,17 +1,36 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { carreras } from '../../data/carreras'
+import { auxiliares } from '../../data/auxiliares'
+import { especializaciones } from '../../data/especializaciones'
+import { cursos } from '../../data/cursos'
 import ProgramCard from '../ui/ProgramCard'
+import type { Carrera } from '../../types'
 
 import 'swiper/swiper-bundle.css'
 
-export default function CarrerasSection() {
+const categoryBasePath: Record<string, string> = {
+  carrera: '/carreras',
+  auxiliar: '/auxiliares',
+  especializacion: '/especializaciones',
+  curso: '/cursos',
+}
+
+const allPrograms: Carrera[] = [
+  ...carreras,
+  ...auxiliares,
+  ...especializaciones,
+  ...cursos,
+]
+
+export default function ProgramasSection() {
   const { ref, inView } = useInView({ triggerOnce: true })
 
   return (
-    <section id="carreras" ref={ref} className="py-16 sm:py-20 lg:py-24 bg-surface">
+    <section id="programas" ref={ref} className="py-16 sm:py-20 lg:py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
@@ -21,10 +40,10 @@ export default function CarrerasSection() {
           className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mb-3 sm:mb-4">
-            Carreras Profesionales Técnicas
+            Nuestra Oferta Educativa
           </h2>
           <p className="text-base sm:text-lg text-deep/80">
-            3 años de formación integral
+            Carreras, programas auxiliares, especializaciones y cursos cortos
           </p>
           <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-4"></div>
         </motion.div>
@@ -50,12 +69,31 @@ export default function CarrerasSection() {
             }}
             className="carreras-swiper !pb-12"
           >
-            {carreras.map((carrera) => (
-              <SwiperSlide key={carrera.slug}>
-                <ProgramCard program={carrera} basePath="/carreras" index={0} />
+            {allPrograms.map((program) => (
+              <SwiperSlide key={`${program.category}-${program.slug}`}>
+                <ProgramCard
+                  program={program}
+                  basePath={categoryBasePath[program.category]}
+                  index={0}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-10"
+        >
+          <Link
+            to="/programas"
+            className="inline-block bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30 text-lg no-underline"
+          >
+            Ver toda la oferta educativa
+          </Link>
         </motion.div>
       </div>
     </section>
