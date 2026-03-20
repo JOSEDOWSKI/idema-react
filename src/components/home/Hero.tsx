@@ -18,7 +18,7 @@ const slides = [
     titulo:    'Administración de Empresas',
     subtitulo: 'Lidera el mundo empresarial con formación de calidad',
     cta:       'Ver carrera',
-    ctaLink:   '/carreras/administracion-de-empresas',
+    ctaLink:   '/carreras/administracion',
   },
   {
     desktop: '/assets/img/hero/desktop/AGROPECUARIA_1.jpeg',
@@ -26,7 +26,7 @@ const slides = [
     titulo:    'Producción Agropecuaria',
     subtitulo: 'Impulsa el desarrollo agrícola con tecnología moderna',
     cta:       'Ver carrera',
-    ctaLink:   '/carreras/produccion-agropecuaria',
+    ctaLink:   '/carreras/agropecuaria',
   },
   {
     desktop: '/assets/img/hero/desktop/CONTABILIDAD_1.jpeg',
