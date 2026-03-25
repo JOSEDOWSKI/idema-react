@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
   return (
     <section
       ref={ref}
-      className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-900 to-gray-800"
+      className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-dark to-deep"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             Lo que dicen nuestros estudiantes
           </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto"></div>
         </motion.div>
 
         {/* Testimonials grid */}
@@ -85,20 +85,20 @@ export default function TestimonialsSection() {
                 <div className="flex items-center justify-between mb-4">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 10 }}
-                    className="text-cyan-400 text-3xl"
+                    className="text-primary text-3xl"
                   >
                     <MdFormatQuote />
                   </motion.div>
                 </div>
 
                 {/* Quote text */}
-                <p className="text-gray-100 text-base leading-relaxed mb-6 italic">
+                <p className="text-white/80 text-base leading-relaxed mb-6 italic">
                   "{testimonial.text}"
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center gap-4 pt-4 border-t border-white/20">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 overflow-hidden flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent overflow-hidden flex-shrink-0">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
@@ -113,7 +113,7 @@ export default function TestimonialsSection() {
                     <p className="font-bold text-white text-sm">
                       {testimonial.name}
                     </p>
-                    <p className="text-cyan-400 text-xs">
+                    <p className="text-primary text-xs">
                       {testimonial.role}
                     </p>
                   </div>

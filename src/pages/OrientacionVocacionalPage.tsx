@@ -159,10 +159,10 @@ export default function OrientacionVocacionalPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-80 md:h-96 overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-80 md:h-96 overflow-hidden bg-gradient-to-br from-dark to-deep">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <motion.div
@@ -172,7 +172,7 @@ export default function OrientacionVocacionalPage() {
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-2">Orientación Vocacional</h1>
-          <p className="text-sm md:text-base text-cyan-300">Descubre tu carrera ideal</p>
+          <p className="text-sm md:text-base text-primary">Descubre tu carrera ideal</p>
         </motion.div>
       </div>
 
@@ -191,15 +191,15 @@ export default function OrientacionVocacionalPage() {
                 {/* Progress Bar */}
                 <div className="mb-12">
                   <div className="flex justify-between mb-4">
-                    <span className="text-sm font-semibold text-gray-700">Pregunta {currentQuestion + 1} de {questions.length}</span>
-                    <span className="text-sm font-semibold text-cyan-600">{Math.round(((currentQuestion + 1) / questions.length) * 100)}%</span>
+                    <span className="text-sm font-semibold text-deep">Pregunta {currentQuestion + 1} de {questions.length}</span>
+                    <span className="text-sm font-semibold text-primary">{Math.round(((currentQuestion + 1) / questions.length) * 100)}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-surface rounded-full h-3 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
                       transition={{ duration: 0.5 }}
-                      className="bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full"
+                      className="bg-gradient-to-r from-primary to-accent h-full rounded-full"
                     ></motion.div>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function OrientacionVocacionalPage() {
                   transition={{ duration: 0.5 }}
                   className="mb-12"
                 >
-                  <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+                  <h2 className="text-3xl font-bold text-deep mb-8 text-center">
                     {questions[currentQuestion].text}
                   </h2>
 
@@ -225,7 +225,7 @@ export default function OrientacionVocacionalPage() {
                         whileHover={{ scale: 1.02, x: 10 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={() => handleAnswer(answer.careers)}
-                        className="w-full p-6 bg-gradient-to-r from-gray-50 to-gray-100 border-2 border-gray-200 rounded-xl text-left font-semibold text-gray-800 hover:border-cyan-400 hover:bg-cyan-50 transition-all duration-300"
+                        className="w-full p-6 bg-gradient-to-r from-surface to-white border-2 border-deep/10 rounded-xl text-left font-semibold text-deep hover:border-primary hover:bg-primary/10 transition-all duration-300"
                       >
                         {answer.text}
                       </motion.button>
@@ -247,13 +247,13 @@ export default function OrientacionVocacionalPage() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white text-5xl font-bold mx-auto mb-6"
+                    className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white text-5xl font-bold mx-auto mb-6"
                   >
                     <FaCheckCircle />
                   </motion.div>
 
-                  <h2 className="text-4xl font-bold text-gray-800 mb-4">¡Listo!</h2>
-                  <p className="text-lg text-gray-700 mb-8">
+                  <h2 className="text-4xl font-bold text-deep mb-4">¡Listo!</h2>
+                  <p className="text-lg text-deep mb-8">
                     Basado en tus respuestas, hemos identificado la carrera que mejor se ajusta a tus intereses y aptitudes.
                   </p>
                 </div>
@@ -264,19 +264,19 @@ export default function OrientacionVocacionalPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-300 rounded-xl p-12 mb-12 text-center"
+                    className="bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/40 rounded-xl p-12 mb-12 text-center"
                   >
                     <h3 className="text-3xl font-bold gradient-text mb-4">{topCareerData.title}</h3>
-                    <p className="text-gray-700 mb-6 text-lg">{topCareerData.description}</p>
+                    <p className="text-deep mb-6 text-lg">{topCareerData.description}</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                       <div>
-                        <p className="text-gray-600 font-semibold">Duración</p>
-                        <p className="text-2xl text-cyan-600 font-bold">{topCareerData.duration}</p>
+                        <p className="text-deep/80 font-semibold">Duración</p>
+                        <p className="text-2xl text-primary font-bold">{topCareerData.duration}</p>
                       </div>
                       <div>
-                        <p className="text-gray-600 font-semibold">Modalidad</p>
-                        <p className="text-2xl text-cyan-600 font-bold">{topCareerData.modality}</p>
+                        <p className="text-deep/80 font-semibold">Modalidad</p>
+                        <p className="text-2xl text-primary font-bold">{topCareerData.modality}</p>
                       </div>
                     </div>
 
@@ -284,7 +284,7 @@ export default function OrientacionVocacionalPage() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-full flex items-center gap-2 justify-center hover:shadow-lg transition-all duration-300 mx-auto mb-4"
+                        className="px-8 py-3 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-full flex items-center gap-2 justify-center hover:shadow-lg transition-all duration-300 mx-auto mb-4"
                       >
                         Ver Detalles de la Carrera
                         <FaArrowRight />
@@ -300,7 +300,7 @@ export default function OrientacionVocacionalPage() {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   className="mb-12"
                 >
-                  <h4 className="text-2xl font-bold text-gray-800 mb-6">También te podrían interesar:</h4>
+                  <h4 className="text-2xl font-bold text-deep mb-6">También te podrían interesar:</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {Object.entries(scores)
                       .sort(([, a], [, b]) => b - a)
@@ -311,10 +311,10 @@ export default function OrientacionVocacionalPage() {
                           <Link key={slug} to={`/carreras/${slug}`}>
                             <motion.div
                               whileHover={{ translateY: -5 }}
-                              className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-cyan-300 transition-all cursor-pointer"
+                              className="bg-white border-2 border-deep/10 rounded-lg p-4 hover:border-primary/40 transition-all cursor-pointer"
                             >
-                              <h5 className="font-bold text-gray-800 mb-2">{career.title}</h5>
-                              <div className="flex items-center gap-2 text-cyan-600 font-semibold text-sm">
+                              <h5 className="font-bold text-deep mb-2">{career.title}</h5>
+                              <div className="flex items-center gap-2 text-primary font-semibold text-sm">
                                 Explorar <FaLink />
                               </div>
                             </motion.div>
@@ -329,7 +329,7 @@ export default function OrientacionVocacionalPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
-                  className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-8 text-white text-center mb-8"
+                  className="bg-gradient-to-r from-primary to-dark rounded-xl p-8 text-white text-center mb-8"
                 >
                   <h4 className="text-2xl font-bold mb-3">¿Listo para comenzar?</h4>
                   <p className="mb-6">Contáctanos para más información sobre tu carrera recomendada</p>
@@ -337,7 +337,7 @@ export default function OrientacionVocacionalPage() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-6 py-2 bg-white text-cyan-600 font-bold rounded-full hover:shadow-lg transition-all duration-300"
+                      className="px-6 py-2 bg-white text-primary font-bold rounded-full hover:shadow-lg transition-all duration-300"
                     >
                       Solicitar Información
                     </motion.button>
@@ -350,7 +350,7 @@ export default function OrientacionVocacionalPage() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={resetQuiz}
-                    className="px-8 py-3 border-2 border-gray-400 text-gray-700 font-bold rounded-full hover:border-gray-600 transition-all duration-300"
+                    className="px-8 py-3 border-2 border-deep/30 text-deep font-bold rounded-full hover:border-deep/50 transition-all duration-300"
                   >
                     Hacer la Prueba de Nuevo
                   </motion.button>

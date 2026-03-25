@@ -73,3 +73,12 @@ export interface FAQItem {
   answer: string
   category?: string
 }
+
+export interface Noticia {
+  slug: string
+  title: string
+  date: string
+  summary: string
+  image: string
+  externalUrl?: string
+}

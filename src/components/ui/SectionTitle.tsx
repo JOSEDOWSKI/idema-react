@@ -20,11 +20,11 @@ export default function SectionTitle({ title, subtitle, light, className = '' }:
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-lg max-w-2xl mx-auto ${light ? 'text-white/80' : 'text-gray-600'}`}>
+        <p className={`text-lg max-w-2xl mx-auto ${light ? 'text-white/80' : 'text-deep/80'}`}>
           {subtitle}
         </p>
       )}
-      <div className={`w-24 h-1 mx-auto mt-4 rounded-full ${light ? 'bg-white/50' : 'bg-gradient-to-r from-[#0dcaf0] to-[#0099cc]'}`} />
+      <div className={`w-24 h-1 mx-auto mt-4 rounded-full ${light ? 'bg-white/50' : 'bg-gradient-to-r from-primary to-dark'}`} />
     </motion.div>
   )
 }

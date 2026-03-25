@@ -118,9 +118,9 @@ export default function Navbar() {
 
   // Navbar background: on home transparent until scrolled, on other pages always dark
   const navBg = !isHome
-    ? 'bg-[#212529]/95 backdrop-blur-md shadow-lg'
+    ? 'bg-dark/95 backdrop-blur-md shadow-lg'
     : isScrolled
-      ? 'bg-[#212529]/95 backdrop-blur-md shadow-lg'
+      ? 'bg-dark/95 backdrop-blur-md shadow-lg'
       : 'bg-transparent'
 
   return (
@@ -134,7 +134,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
-              src="/assets/img/navbar-logo.png"
+              src="/assets/img/idema-white.png"
               alt="IDEMA"
               className="transition-all duration-300"
               style={{ height: isScrolled ? '36px' : '44px' }}
@@ -147,7 +147,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-white/90 hover:text-[#0dcaf0] transition-colors text-sm font-semibold uppercase tracking-wider px-3 py-2"
+                className="text-white/90 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-wider px-3 py-2"
               >
                 {link.label}
               </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setOpenDropdown(openDropdown === 'acceder' ? null : 'acceder')}
-                className="text-white/90 hover:text-[#0dcaf0] transition-colors text-sm font-semibold uppercase tracking-wider px-3 py-2 flex items-center gap-1"
+                className="text-white/90 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-wider px-3 py-2 flex items-center gap-1"
               >
                 Acceder
                 <FaChevronDown className={`w-2.5 h-2.5 transition-transform duration-200 ${openDropdown === 'acceder' ? 'rotate-180' : ''}`} />
@@ -170,14 +170,14 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -5, scale: 0.98 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100"
+                    className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl overflow-hidden border border-deep/10"
                   >
                     {accederDropdown.map(item => {
                       const Icon = iconMap[item.icon]
-                      const cls = "flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-[#f0f8ff] transition-colors text-sm"
+                      const cls = "flex items-center gap-3 px-4 py-3 text-deep hover:bg-surface transition-colors text-sm"
                       const inner = (
                         <>
-                          <Icon className="w-4 h-4 text-[#0dcaf0]" />
+                          <Icon className="w-4 h-4 text-primary" />
                           <span>{item.label}</span>
                         </>
                       )
@@ -195,12 +195,12 @@ export default function Navbar() {
             {/* Cart Button */}
             <button
               onClick={toggleCart}
-              className="relative text-white/90 hover:text-[#0dcaf0] transition-colors p-2 ml-1"
+              className="relative text-white/90 hover:text-primary transition-colors p-2 ml-1"
               aria-label="Carrito de compras"
             >
               <FaShoppingCart className="w-5 h-5" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-cta text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {totalItems}
                 </span>
               )}
@@ -213,7 +213,7 @@ export default function Navbar() {
                   setShowContactForm(!showContactForm)
                   setOpenDropdown(null)
                 }}
-                className="bg-gradient-to-r from-[#0dcaf0] to-[#0099cc] text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-[0_4px_25px_rgba(13,202,240,0.5)] transition-all duration-300 flex items-center gap-2"
+                className="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-[0_4px_25px_rgba(13,202,240,0.5)] transition-all duration-300 flex items-center gap-2"
                 style={{ animation: 'pulse-glow 2s infinite' }}
               >
                 <FaPhone className="w-3 h-3" />
@@ -231,7 +231,7 @@ export default function Navbar() {
                     className="absolute right-0 mt-3 w-[380px] rounded-2xl shadow-2xl overflow-hidden z-50"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <div className="bg-gradient-to-br from-[#667eea] to-[#764ba2] p-5">
+                    <div className="bg-gradient-to-br from-accent to-deep p-5">
                       <div className="flex items-center justify-between mb-3">
                         <h5 className="text-white font-bold text-base">¡Nos Comunicamos Contigo!</h5>
                         <button onClick={() => setShowContactForm(false)} className="text-white/60 hover:text-white transition-colors">
@@ -242,9 +242,9 @@ export default function Navbar() {
                       <form onSubmit={handleSubmit} className="space-y-2.5">
                         <div className="flex gap-2">
                           <input type="text" name="firstName" placeholder="Nombres *" value={formData.firstName} onChange={handleFormChange} maxLength={50}
-                            className={`flex-1 px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-gray-400 ${formErrors.firstName ? 'ring-2 ring-red-400' : ''}`} />
+                            className={`flex-1 px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-deep/50 ${formErrors.firstName ? 'ring-2 ring-cta' : ''}`} />
                           <input type="text" name="lastName" placeholder="Apellidos *" value={formData.lastName} onChange={handleFormChange} maxLength={50}
-                            className={`flex-1 px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-gray-400 ${formErrors.firstName ? 'ring-2 ring-red-400' : ''}`} />
+                            className={`flex-1 px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-deep/50 ${formErrors.firstName ? 'ring-2 ring-cta' : ''}`} />
                         </div>
 
                         <div className="flex gap-2">
@@ -255,14 +255,14 @@ export default function Navbar() {
                             ))}
                           </select>
                           <input type="tel" name="phone" placeholder="987 654 321" value={formData.phone} onChange={handleFormChange} maxLength={9}
-                            className={`flex-1 px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-gray-400 ${formErrors.phone ? 'ring-2 ring-red-400' : ''}`} />
+                            className={`flex-1 px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-deep/50 ${formErrors.phone ? 'ring-2 ring-cta' : ''}`} />
                         </div>
 
                         <input type="email" name="email" placeholder="Correo Electrónico *" value={formData.email} onChange={handleFormChange} maxLength={100}
-                          className={`w-full px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-gray-400 ${formErrors.email ? 'ring-2 ring-red-400' : ''}`} />
+                          className={`w-full px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-deep/50 ${formErrors.email ? 'ring-2 ring-cta' : ''}`} />
 
                         <input type="text" name="comment" placeholder="¿Qué carrera o curso te interesa? *" value={formData.comment} onChange={handleFormChange} maxLength={200}
-                          className={`w-full px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-gray-400 ${formErrors.comment ? 'ring-2 ring-red-400' : ''}`} />
+                          className={`w-full px-3 py-2.5 rounded-xl text-sm bg-white/95 border-none outline-none focus:ring-2 focus:ring-white/40 placeholder-deep/50 ${formErrors.comment ? 'ring-2 ring-cta' : ''}`} />
 
                         <label className="flex items-start gap-2 text-white/90 text-xs cursor-pointer">
                           <input type="checkbox" name="acceptPolicies" checked={formData.acceptPolicies} onChange={handleFormChange}
@@ -273,7 +273,7 @@ export default function Navbar() {
                         </label>
 
                         <button type="submit"
-                          className="w-full py-2.5 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-[#f093fb] to-[#f5576c] hover:translate-y-[-2px] hover:shadow-[0_6px_20px_rgba(245,87,108,0.4)] transition-all duration-300">
+                          className="w-full py-2.5 rounded-full font-semibold text-sm text-white bg-gradient-to-r from-cta to-accent hover:translate-y-[-2px] hover:shadow-[0_6px_20px_rgba(245,87,108,0.4)] transition-all duration-300">
                           Enviar
                         </button>
                       </form>
@@ -288,12 +288,12 @@ export default function Navbar() {
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={toggleCart}
-              className="relative text-white/90 hover:text-[#0dcaf0] transition-colors p-2"
+              className="relative text-white/90 hover:text-primary transition-colors p-2"
               aria-label="Carrito de compras"
             >
               <FaShoppingCart className="w-5 h-5" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-cta text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {totalItems}
                 </span>
               )}
@@ -316,14 +316,14 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
-              className="lg:hidden mt-3 pt-3 border-t border-white/10"
+              className="lg:hidden mt-3 pt-3 border-t border-white/10 bg-dark/95 backdrop-blur-md rounded-xl px-2 pb-2"
             >
               {mainNavLinks.map(link => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsMobileOpen(false)}
-                  className="block text-white/90 hover:text-[#0dcaf0] py-2.5 text-sm font-semibold uppercase tracking-wider"
+                  className="block text-white/90 hover:text-primary py-2.5 text-sm font-semibold uppercase tracking-wider"
                 >
                   {link.label}
                 </Link>
@@ -333,7 +333,7 @@ export default function Navbar() {
               <div className="mt-2 pt-2 border-t border-white/10">
                 <button
                   onClick={() => setOpenDropdown(openDropdown === 'acceder' ? null : 'acceder')}
-                  className="text-white/90 hover:text-[#0dcaf0] w-full text-left text-sm font-semibold uppercase tracking-wider flex items-center gap-2 py-2.5"
+                  className="text-white/90 hover:text-primary w-full text-left text-sm font-semibold uppercase tracking-wider flex items-center gap-2 py-2.5"
                 >
                   Acceder
                   <FaChevronDown className={`w-2.5 h-2.5 transition-transform ${openDropdown === 'acceder' ? 'rotate-180' : ''}`} />
@@ -348,7 +348,7 @@ export default function Navbar() {
                     >
                       {accederDropdown.map(item => {
                         const Icon = iconMap[item.icon]
-                        const cls = "flex items-center gap-2 text-gray-300 hover:text-[#0dcaf0] py-1.5 text-sm"
+                        const cls = "flex items-center gap-2 text-white/60 hover:text-primary py-1.5 text-sm"
                         const inner = (<><Icon className="w-3 h-3" />{item.label}</>)
                         return item.external ? (
                           <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileOpen(false)} className={cls}>{inner}</a>
@@ -363,7 +363,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => { setShowContactForm(!showContactForm); setIsMobileOpen(false) }}
-                className="w-full mt-3 mb-2 bg-gradient-to-r from-[#0dcaf0] to-[#0099cc] text-white px-4 py-2.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
+                className="w-full mt-3 mb-2 bg-primary text-white px-4 py-2.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
               >
                 <FaPhone className="w-3 h-3" />
                 ¡Contáctanos!

@@ -10,7 +10,7 @@ export interface DropdownItem extends NavLink {
 
 export const mainNavLinks: NavLink[] = [
   { label: 'Inicio', href: '/' },
-  { label: 'Carreras', href: '/#carreras' },
+  { label: 'Programas', href: '/programas' },
   { label: 'Sobre Nosotros', href: '/nosotros' },
 ]
 
@@ -41,7 +41,7 @@ export const countryCodes = [
 export const footerLinks = {
   quickLinks: [
     { label: 'Inicio', href: '/' },
-    { label: 'Oferta Educativa', href: '/#carreras' },
+    { label: 'Oferta Educativa', href: '/programas' },
     { label: 'Campus Virtual', href: 'https://aprende.instituto-idema.org', external: true },
     { label: 'Sobre Nosotros', href: '/nosotros' },
     { label: 'Contacto', href: '/#contacto' },

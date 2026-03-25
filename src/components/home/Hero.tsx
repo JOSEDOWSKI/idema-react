@@ -1,144 +1,200 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { IoChevronDown } from 'react-icons/io5'
-import { useInView } from 'react-intersection-observer'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiChevronLeft, FiChevronRight, FiChevronDown } from 'react-icons/fi'
+import { theme } from '@/theme'
 
-const typingMessages = [
-  'Estamos Transformando la Educación que Conoces',
-  'Formando Profesionales del Futuro',
-  'Educación de Calidad y Accesible',
+const slides = [
+  {
+    desktop: '/assets/img/hero/desktop/PRINCIPAL _1.jpeg',
+    mobile:  '/assets/img/hero/mobile/PRINCIPAL_2.jpeg',
+    titulo:    'Instituto IDEMA',
+    subtitulo: 'Más de 30 años transformando la educación técnica en el Perú',
+    cta:       'Conoce nuestros programas',
+    ctaLink:   '/programas',
+  },
+  {
+    desktop: '/assets/img/hero/desktop/ADMI_EMPRESAS_1.jpeg',
+    mobile:  '/assets/img/hero/mobile/ADMI_EMPRESAS_2.jpeg',
+    titulo:    'Administración de Empresas',
+    subtitulo: 'Lidera el mundo empresarial con formación de calidad',
+    cta:       'Ver carrera',
+    ctaLink:   '/carreras/administracion',
+  },
+  {
+    desktop: '/assets/img/hero/desktop/AGROPECUARIA_1.jpeg',
+    mobile:  '/assets/img/hero/mobile/AGROPECUARIA_2.jpeg',
+    titulo:    'Producción Agropecuaria',
+    subtitulo: 'Impulsa el desarrollo agrícola con tecnología moderna',
+    cta:       'Ver carrera',
+    ctaLink:   '/carreras/agropecuaria',
+  },
+  {
+    desktop: '/assets/img/hero/desktop/CONTABILIDAD_1.jpeg',
+    mobile:  '/assets/img/hero/mobile/CONTABILIDAD_2.jpeg',
+    titulo:    'Contabilidad',
+    subtitulo: 'Domina las finanzas y la gestión contable profesional',
+    cta:       'Ver carrera',
+    ctaLink:   '/carreras/contabilidad',
+  },
+  {
+    desktop: '/assets/img/hero/desktop/ENFERMERIA_1.jpeg',
+    mobile:  '/assets/img/hero/mobile/ENFERMERIA_2.jpeg',
+    titulo:    'Enfermería Técnica',
+    subtitulo: 'Forma parte del equipo de salud que el Perú necesita',
+    cta:       'Ver carrera',
+    ctaLink:   '/carreras/enfermeria',
+  },
 ]
 
+const INTERVAL = 5000
+const PAUSE_AFTER_MANUAL = 3000
+
 export default function Hero() {
-  const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
-  const [displayedText, setDisplayedText] = useState('')
-  const [isTyping, setIsTyping] = useState(true)
-  const { ref, inView } = useInView({ triggerOnce: true })
+  const [current, setCurrent] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const pauseRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
-    const currentMessage = typingMessages[currentMessageIndex]
-    let timeout: ReturnType<typeof setTimeout>
+    const mq = window.matchMedia('(max-width: 768px)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
-    if (isTyping) {
-      if (displayedText.length < currentMessage.length) {
-        timeout = setTimeout(() => {
-          setDisplayedText(currentMessage.slice(0, displayedText.length + 1))
-        }, 50)
-      } else {
-        timeout = setTimeout(() => {
-          setIsTyping(false)
-        }, 3000)
-      }
-    } else {
-      if (displayedText.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayedText(displayedText.slice(0, -1))
-        }, 30)
-      } else {
-        setCurrentMessageIndex((prev) => (prev + 1) % typingMessages.length)
-        setIsTyping(true)
-      }
+  const startAutoplay = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current)
+    timerRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length)
+    }, INTERVAL)
+  }, [])
+
+  useEffect(() => {
+    startAutoplay()
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current)
+      if (pauseRef.current) clearTimeout(pauseRef.current)
     }
+  }, [startAutoplay])
 
-    return () => clearTimeout(timeout)
-  }, [displayedText, isTyping, currentMessageIndex])
+  const goTo = useCallback((index: number) => {
+    setCurrent(index)
+    if (timerRef.current) clearInterval(timerRef.current)
+    if (pauseRef.current) clearTimeout(pauseRef.current)
+    pauseRef.current = setTimeout(startAutoplay, PAUSE_AFTER_MANUAL)
+  }, [startAutoplay])
+
+  const prev = () => goTo((current - 1 + slides.length) % slides.length)
+  const next = () => goTo((current + 1) % slides.length)
+
+  const scrollDown = () => {
+    const hero = document.getElementById('hero')
+    if (hero) {
+      const nextSection = hero.nextElementSibling as HTMLElement | null
+      nextSection?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const slide = slides[current]
+  const images = isMobile
+    ? slides.map((s) => s.mobile)
+    : slides.map((s) => s.desktop)
 
   return (
-    <div
-      ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]"
-    >
-      {/* Animated background gradient overlay */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background slider */}
+      <AnimatePresence mode="popLayout">
+        <motion.img
+          key={current}
+          src={images[current]}
+          alt={slide.titulo}
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading={current === 0 ? 'eager' : 'lazy'}
+        />
+      </AnimatePresence>
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-dark/85 via-dark/60 to-transparent" />
+
+      {/* Content panel */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+          {/* Left panel - slide content */}
+          <div className="w-full md:w-1/2 flex flex-col bg-primary/25 p-6 rounded-2xl justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 40 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+              >
+                <h1
+                  className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
+                  style={{ textShadow: `0 2px 20px ${theme.colors.dark}` }}
+                >
+                  {slide.titulo}
+                </h1>
+                <p className="font-body text-lg sm:text-xl text-white/80 mb-8 max-w-lg">
+                  {slide.subtitulo}
+                </p>
+                <a
+                  href={slide.ctaLink}
+                  className="inline-block bg-primary hover:bg-primary/90 text-white font-subheading font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30 text-lg"
+                >
+                  {slide.cta}
+                </a>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
 
-      {/* Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl"
+      {/* Navigation arrows */}
+      <button
+        onClick={prev}
+        aria-label="Slide anterior"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/30 text-white flex items-center justify-center hover:bg-primary transition-colors duration-300"
       >
-        {/* Glassmorphism container */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-8 sm:p-12 lg:p-16 mb-8"
-        >
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-cyan-300 text-sm sm:text-base font-semibold tracking-widest uppercase mb-4"
-          >
-            BIENVENIDO A IDEMA
-          </motion.p>
-
-          {/* Main Title */}
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
-          >
-            Estamos Transformando <br /> la Educación que Conoces
-          </motion.h1>
-
-          {/* Typing effect */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="h-8 flex items-center justify-center mb-8"
-          >
-            <p className="text-lg sm:text-xl text-cyan-300">
-              {displayedText}
-              <span className="animate-pulse">|</span>
-            </p>
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link to="#carreras">
-              <button className="px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
-                Ver Carreras
-              </button>
-            </Link>
-            <a href="/orientacion-vocacional">
-              <button className="px-8 py-3 sm:py-4 backdrop-blur-md bg-white/10 border border-white/30 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                Orientación Vocacional
-              </button>
-            </a>
-          </motion.div>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        <FiChevronLeft className="text-2xl" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Siguiente slide"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/30 text-white flex items-center justify-center hover:bg-primary transition-colors duration-300"
       >
-        <motion.div
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex flex-col items-center"
-        >
-          <span className="text-white/60 text-sm mb-2">Desplázate</span>
-          <IoChevronDown className="text-cyan-300 text-2xl" />
-        </motion.div>
-      </motion.div>
-    </div>
+        <FiChevronRight className="text-2xl" />
+      </button>
+
+      {/* Dots indicator */}
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex gap-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goTo(index)}
+            aria-label={`Ir a slide ${index + 1}`}
+            className={`rounded-full transition-all duration-300 ${
+              index === current
+                ? 'w-8 h-3 bg-primary'
+                : 'w-3 h-3 bg-white/50 hover:bg-white/80'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Scroll down arrow */}
+      <button
+        onClick={scrollDown}
+        aria-label="Ir a la siguiente sección"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-primary animate-bounce"
+      >
+        <FiChevronDown className="text-4xl" />
+      </button>
+    </section>
   )
 }

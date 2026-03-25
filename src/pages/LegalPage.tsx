@@ -262,10 +262,10 @@ export default function LegalPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-80 md:h-96 overflow-hidden bg-gradient-to-br from-[#000428] to-[#004e92]">
+      <div className="relative h-80 md:h-96 overflow-hidden bg-gradient-to-br from-dark to-deep">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <motion.div
@@ -275,7 +275,7 @@ export default function LegalPage() {
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-2">{pageType}</h1>
-          <p className="text-sm md:text-base text-cyan-300">Instituto de Educación Superior IDEMA</p>
+          <p className="text-sm md:text-base text-primary">Instituto de Educación Superior IDEMA</p>
         </motion.div>
       </div>
 
@@ -294,37 +294,37 @@ export default function LegalPage() {
               {/* Section title */}
               {index === 0 && section.subtitle ? (
                 <>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">{section.title}</h2>
-                  <p className="text-lg font-semibold text-[#0dcaf0] mb-6 text-center">{section.subtitle}</p>
+                  <h2 className="text-2xl md:text-3xl font-bold text-deep mb-2 text-center">{section.title}</h2>
+                  <p className="text-lg font-semibold text-primary mb-6 text-center">{section.subtitle}</p>
                   {section.intro && (
-                    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl border border-cyan-200 p-6 mb-8">
+                    <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl border border-primary/30 p-6 mb-8">
                       {section.intro.split('\n\n').map((p, i) => (
-                        <p key={i} className="text-gray-700 leading-relaxed mb-3 last:mb-0">{p}</p>
+                        <p key={i} className="text-deep leading-relaxed mb-3 last:mb-0">{p}</p>
                       ))}
                     </div>
                   )}
                 </>
               ) : (
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 mt-6">{section.title}</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-deep mb-4 mt-6">{section.title}</h3>
               )}
 
               {/* Content paragraphs */}
               {section.content && section.content.split('\n\n').map((p, i) => (
-                <p key={i} className="text-gray-700 leading-relaxed mb-4">{p}</p>
+                <p key={i} className="text-deep leading-relaxed mb-4">{p}</p>
               ))}
 
               {/* Bullet points */}
               {section.bullets && (
                 <ul className="list-disc list-inside space-y-2 my-4 pl-4">
                   {section.bullets.map((bullet, i) => (
-                    <li key={i} className="text-gray-700 leading-relaxed">{bullet}</li>
+                    <li key={i} className="text-deep leading-relaxed">{bullet}</li>
                   ))}
                 </ul>
               )}
 
               {/* Extra content after bullets */}
               {section.extra && section.extra.split('\n\n').map((p, i) => (
-                <p key={i} className="text-gray-700 leading-relaxed mb-4">{p}</p>
+                <p key={i} className="text-deep leading-relaxed mb-4">{p}</p>
               ))}
             </motion.div>
           ))}
@@ -335,20 +335,20 @@ export default function LegalPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 p-8 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl border-2 border-cyan-200"
+            className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl border-2 border-primary/30"
           >
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Contacto y Consultas</h2>
-            <p className="text-gray-700 mb-4">
+            <h2 className="text-2xl font-bold text-deep mb-4">Contacto y Consultas</h2>
+            <p className="text-deep mb-4">
               Si tiene preguntas sobre {isPrivacy ? 'esta política de privacidad' : 'estos términos y condiciones'}, contáctenos:
             </p>
             <div className="space-y-2">
-              <p className="text-gray-700">
+              <p className="text-deep">
                 <strong>Correo:</strong> info@idema.edu.pe
               </p>
-              <p className="text-gray-700">
+              <p className="text-deep">
                 <strong>Teléfono:</strong> +51 951 361 224 / 054-209978
               </p>
-              <p className="text-gray-700">
+              <p className="text-deep">
                 <strong>Dirección:</strong> Urb. Las Malvinas U-1 Pedregal - Majes, Arequipa
               </p>
             </div>

@@ -64,10 +64,10 @@ export default function WhatsAppButton() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.9 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                className="bg-white rounded-2xl shadow-2xl overflow-hidden w-72 border border-gray-100"
+                className="bg-white rounded-2xl shadow-2xl overflow-hidden w-72 border border-deep/10"
               >
                 {/* Header */}
-                <div className="bg-gradient-to-r from-[#25d366] to-[#128C7E] text-white p-4">
+                <div className="bg-gradient-to-r from-whatsapp to-dark text-white p-4">
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-bold text-base">¡Hola! 👋</h3>
@@ -91,9 +91,9 @@ export default function WhatsAppButton() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.05 }}
                       onClick={() => handleRepClick(rep)}
-                      className="w-full px-4 py-3 text-left border-b border-gray-50 last:border-b-0 hover:bg-green-50 transition-colors flex items-center gap-3 group"
+                      className="w-full px-4 py-3 text-left border-b border-deep/5 last:border-b-0 hover:bg-primary/10 transition-colors flex items-center gap-3 group"
                     >
-                      <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-100 flex-shrink-0 ring-2 ring-[#25d366]/20">
+                      <div className="w-10 h-10 rounded-full overflow-hidden bg-surface flex-shrink-0 ring-2 ring-whatsapp/20">
                         <img
                           src={repImages[rep.name] || '/assets/img/idemaNEWLOGO2026.png'}
                           alt={rep.name}
@@ -104,10 +104,10 @@ export default function WhatsAppButton() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-sm text-gray-800">{rep.name}</p>
-                        <p className="text-xs text-gray-400">Asesor de ventas</p>
+                        <p className="font-semibold text-sm text-deep">{rep.name}</p>
+                        <p className="text-xs text-deep/50">Asesor de ventas</p>
                       </div>
-                      <div className="w-8 h-8 rounded-full bg-[#25d366] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="w-8 h-8 rounded-full bg-whatsapp flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                         <FaWhatsapp className="w-4 h-4 text-white" />
                       </div>
                     </motion.button>
@@ -115,8 +115,8 @@ export default function WhatsAppButton() {
                 </div>
 
                 {/* Footer note */}
-                <div className="px-4 py-2 bg-gray-50 text-center">
-                  <p className="text-[10px] text-gray-400">Respuesta inmediata por WhatsApp</p>
+                <div className="px-4 py-2 bg-surface text-center">
+                  <p className="text-[10px] text-deep/50">Respuesta inmediata por WhatsApp</p>
                 </div>
               </motion.div>
             )}
@@ -125,12 +125,12 @@ export default function WhatsAppButton() {
           {/* Floating WhatsApp Button */}
           <div className="relative">
             {/* Pulse ring */}
-            <span className="absolute inset-0 rounded-full bg-[#25d366] animate-ping opacity-20" />
+            <span className="absolute inset-0 rounded-full bg-whatsapp animate-ping opacity-20" />
             <motion.button
               onClick={() => setShowMenu(!showMenu)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="relative w-[60px] h-[60px] rounded-full bg-gradient-to-br from-[#25d366] to-[#128C7E] text-white shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center"
+              className="relative w-[60px] h-[60px] rounded-full bg-gradient-to-br from-whatsapp to-dark text-white shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center"
               aria-label="Contactar por WhatsApp"
             >
               <FaWhatsapp className="w-8 h-8" />

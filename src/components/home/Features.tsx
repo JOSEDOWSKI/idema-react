@@ -33,7 +33,7 @@ export default function Features() {
   const { ref, inView } = useInView({ triggerOnce: true })
 
   return (
-    <section ref={ref} className="py-12 sm:py-16 lg:py-20 bg-white border-y border-gray-200">
+    <section ref={ref} className="py-12 sm:py-16 lg:py-20 bg-white border-y border-deep/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Highlighted box */}
         <motion.div
@@ -42,7 +42,7 @@ export default function Features() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <div className="inline-block bg-gradient-to-r from-cyan-100 to-blue-100 text-cyan-700 px-6 py-3 rounded-full font-bold text-lg">
+          <div className="inline-block bg-gradient-to-r from-primary/15 to-accent/15 text-dark px-6 py-3 rounded-full font-bold text-lg">
             +300 Cursos en Línea
           </div>
         </motion.div>
@@ -65,11 +65,11 @@ export default function Features() {
               >
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="bg-gradient-to-br from-cyan-100 to-blue-100 p-4 rounded-full mb-4 group-hover:shadow-lg transition-shadow"
+                  className="bg-gradient-to-br from-primary/15 to-accent/15 p-4 rounded-full mb-4 group-hover:shadow-lg transition-shadow"
                 >
-                  <Icon className="text-3xl text-cyan-600" />
+                  <Icon className="text-3xl text-primary" />
                 </motion.div>
-                <p className="text-gray-700 font-semibold text-sm sm:text-base group-hover:text-cyan-600 transition-colors">
+                <p className="text-deep font-semibold text-sm sm:text-base group-hover:text-primary transition-colors">
                   {feature.text}
                 </p>
               </motion.div>

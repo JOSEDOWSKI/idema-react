@@ -7,25 +7,25 @@ const values = [
     icon: MdSchool,
     title: 'Excelencia Educativa',
     description: 'Compromiso con la más alta calidad en formación técnica profesional',
-    color: 'from-cyan-400 to-cyan-600',
+    color: 'from-primary to-dark',
   },
   {
     icon: MdLightbulb,
     title: 'Innovación',
     description: 'Incorporamos tecnología y metodologías modernas en la enseñanza',
-    color: 'from-blue-400 to-blue-600',
+    color: 'from-dark to-deep',
   },
   {
     icon: MdPublic,
     title: 'Compromiso Social',
     description: 'Educación accesible e inclusiva para el desarrollo de la comunidad',
-    color: 'from-purple-400 to-purple-600',
+    color: 'from-accent to-deep',
   },
   {
     icon: MdTrendingUp,
     title: 'Crecimiento',
     description: 'Formamos profesionales íntegros preparados para los retos del futuro',
-    color: 'from-pink-400 to-pink-600',
+    color: 'from-cta to-accent',
   },
 ]
 
@@ -62,10 +62,10 @@ export default function ValuesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep mb-4">
             Nuestros Valores
           </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mx-auto"></div>
+          <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto"></div>
         </motion.div>
 
         {/* Values grid */}
@@ -98,12 +98,12 @@ export default function ValuesSection() {
                   </motion.div>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 relative z-10">
+                  <h3 className="text-lg sm:text-xl font-bold text-deep mb-3 relative z-10">
                     {value.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-700 text-sm relative z-10 leading-relaxed">
+                  <p className="text-deep text-sm relative z-10 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
