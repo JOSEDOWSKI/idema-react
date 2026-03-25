@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { carreras } from '../data/carreras'
@@ -33,6 +34,16 @@ const allPrograms: Carrera[] = [
 export default function ProgramasPage() {
   const [activeFilter, setActiveFilter] = useState<string>('todos')
   const [search, setSearch] = useState('')
+  const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const categoria = searchParams.get('categoria')
+
+    if (categoria && categories.some(c => c.key === categoria)) {
+      setActiveFilter(categoria)
+    }
+  }, [searchParams])
 
   const filtered = useMemo(() => {
     return allPrograms.filter((p) => {
@@ -88,7 +99,10 @@ export default function ProgramasPage() {
               {categories.map((cat) => (
                 <button
                   key={cat.key}
-                  onClick={() => setActiveFilter(cat.key)}
+                  onClick={() => {
+                    setActiveFilter(cat.key)
+                    navigate(`/programas?categoria=${cat.key}`)
+                  }}
                   className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                     activeFilter === cat.key
                       ? 'bg-primary text-white shadow-md shadow-primary/30'

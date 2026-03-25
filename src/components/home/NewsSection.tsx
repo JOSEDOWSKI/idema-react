@@ -142,7 +142,7 @@ export default function NewsSection() {
         >
           <Link
             to="/noticias"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-dark text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1"
           >
             Ver todas las noticias
             <MdArrowForward className="text-lg" />
