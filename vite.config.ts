@@ -9,4 +9,13 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  server: {
+    proxy: {
+      '/api/noticias': {
+        target: 'https://idema.edu.pe',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/noticias/, '/php/noticias_proxy.php'),
+      },
+    },
+  },
 })

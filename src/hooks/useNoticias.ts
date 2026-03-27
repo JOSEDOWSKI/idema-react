@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import { noticias as staticNoticias } from '../data/noticias'
 import type { Noticia } from '../types'
 
-const PROXY_URL = 'https://idema.edu.pe/php/noticias_proxy.php'
+const PROXY_URL = import.meta.env.DEV
+  ? '/api/noticias'
+  : 'https://idema.edu.pe/php/noticias_proxy.php'
 
 interface ProxyNoticia {
   title: string
