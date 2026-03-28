@@ -2,8 +2,8 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { FaCheck, FaClock, FaBook, FaCertificate, FaCalendar, FaWhatsapp, FaEnvelope, FaBriefcase, FaShoppingCart, FaMoneyBillWave } from 'react-icons/fa'
-import { carreras } from '../data/carreras'
-import { useCart } from '../context/CartContext'
+import { carreras } from '../../data/carreras/carreras'
+import { useCart } from '../../context/CartContext'
 
 export default function CarreraPage() {
   const { slug } = useParams<{ slug: string }>()

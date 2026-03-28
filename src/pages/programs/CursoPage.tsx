@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { FaCheck, FaClock, FaBook, FaCertificate, FaCalendar, FaWhatsapp, FaEnvelope, FaCreditCard, FaShieldAlt, FaShoppingCart } from 'react-icons/fa'
-import { cursos } from '../data/cursos'
+import { cursos } from '../data/carreras/cursos'
 import { useCulqi } from '../hooks/useCulqi'
 import { useCart } from '../context/CartContext'
 
