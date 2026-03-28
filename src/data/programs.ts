@@ -12,6 +12,10 @@ export interface ProgramCategory {
   ruta: string
   cantidad: number
   imagenIzquierda: boolean
+  duracion: string
+  modalidad: string
+  certificaciones: string[]
+  titulacion?: string
 }
 
 export const programCategories: ProgramCategory[] = [
@@ -25,17 +29,24 @@ export const programCategories: ProgramCategory[] = [
     ruta: '/programas?categoria=carrera',
     cantidad: carreras.length,
     imagenIzquierda: true,
+    duracion: '3 años (6 semestres)',
+    modalidad: 'Presencial, Semipresencial y Virtual',
+    certificaciones: ['Título a Nombre de la Nación'],
+    titulacion: 'Título a Nombre de la Nación',
   },
   {
     key: 'auxiliares',
-    badge: 'PROGRAMAS AUXILIARES',
-    titulo: 'Programas Auxiliares',
+    badge: 'AUXILIARES',
+    titulo: 'Auxiliares',
     descripcion:
       'Formación corta e intensiva de 10 meses, ideal para insertarte rápidamente al mercado laboral. Certificado reconocido por MINEDU con modalidad 100% virtual y horarios completamente flexibles.',
     imagen: '/assets/img/programs/auxiliares.png',
     ruta: '/programas?categoria=auxiliar',
     cantidad: auxiliares.length,
     imagenIzquierda: false,
+    duracion: '10 meses',
+    modalidad: 'Virtual',
+    certificaciones: ['Certificado Nacional reconocido por MINEDU', 'Certificación Internacional ISO 21001'],
   },
   {
     key: 'especializaciones',
@@ -47,6 +58,9 @@ export const programCategories: ProgramCategory[] = [
     ruta: '/programas?categoria=especializacion',
     cantidad: especializaciones.length,
     imagenIzquierda: true,
+    duracion: '10 meses',
+    modalidad: '100% Virtual',
+    certificaciones: ['Diplomado reconocido por MINEDU a nivel nacional', 'Certificación Internacional ISO 21001'],
   },
   {
     key: 'cursos',
@@ -58,5 +72,8 @@ export const programCategories: ProgramCategory[] = [
     ruta: '/programas?categoria=curso',
     cantidad: cursos.length,
     imagenIzquierda: false,
+    duracion: '4 semanas',
+    modalidad: '100% Virtual',
+    certificaciones: ['Certificado reconocido por MINEDU a nivel nacional', 'Certificación Internacional ISO 21001'],
   },
 ]

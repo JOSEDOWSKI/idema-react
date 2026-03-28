@@ -161,7 +161,19 @@ export default function AuxiliarPage() {
                 <FaBook className="text-accent text-3xl mb-4" /><h3 className="font-bold text-deep mb-2">Modalidad</h3><p className="text-deep">{auxiliar.modality}</p>
               </motion.div>
               <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-accent/10 to-cta/10 p-6 rounded-xl border border-accent/20">
-                <FaCertificate className="text-accent text-3xl mb-4" /><h3 className="font-bold text-deep mb-2">Certificación</h3><p className="text-deep">Certificado oficial MINEDU</p>
+                <FaCertificate className="text-accent text-3xl mb-4" /><h3 className="font-bold text-deep mb-2">Certificación</h3>
+                {auxiliar.certification ? (
+                  <ul className="text-deep text-sm space-y-1">
+                    {auxiliar.certification.map((cert, i) => (
+                      <li key={i} className="flex items-start gap-1">
+                        <FaCheck className="text-accent text-xs mt-1 flex-shrink-0" />
+                        {cert}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-deep">Certificado oficial MINEDU</p>
+                )}
               </motion.div>
               <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-cta/10 to-accent/10 p-6 rounded-xl border border-cta/20">
                 <FaCalendar className="text-cta text-3xl mb-4" /><h3 className="font-bold text-deep mb-2">Horarios</h3><p className="text-deep">Flexibles según tu disponibilidad</p>

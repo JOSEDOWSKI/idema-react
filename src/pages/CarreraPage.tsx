@@ -56,6 +56,16 @@ export default function CarreraPage() {
           style={{ backgroundImage: `url('${carrera.image}')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
+        {/* Duration badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="absolute top-6 right-6 md:top-10 md:right-12 z-10 bg-gradient-to-r from-primary to-accent text-white px-5 py-2.5 rounded-full font-bold text-sm md:text-base shadow-lg shadow-primary/30"
+        >
+          <FaClock className="inline mr-2" />
+          {carrera.duration}
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +74,7 @@ export default function CarreraPage() {
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-2">{carrera.title}</h1>
           {carrera.subtitle && <p className="text-primary text-lg mb-2">{carrera.subtitle}</p>}
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl">{carrera.duration} • {carrera.modality}</p>
+          <p className="text-lg md:text-xl text-white/70 max-w-2xl">{carrera.modality}</p>
         </motion.div>
       </div>
 
@@ -248,8 +258,18 @@ export default function CarreraPage() {
               </motion.div>
               <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-accent/10 to-cta/10 p-6 rounded-xl border border-accent/20">
                 <FaCertificate className="text-accent text-3xl mb-4" />
-                <h3 className="font-bold text-deep mb-2">Certificación</h3>
-                <p className="text-deep">Diploma oficial MINEDU</p>
+                <h3 className="font-bold text-deep mb-2">Titulación</h3>
+                <p className="text-deep">{carrera.titulacion || 'Título oficial MINEDU'}</p>
+                {carrera.certification && (
+                  <ul className="text-deep text-sm space-y-1 mt-2">
+                    {carrera.certification.map((cert, i) => (
+                      <li key={i} className="flex items-start gap-1">
+                        <FaCheck className="text-accent text-xs mt-1 flex-shrink-0" />
+                        {cert}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
               <motion.div whileHover={{ translateY: -10 }} className="bg-gradient-to-br from-cta/10 to-accent/10 p-6 rounded-xl border border-cta/20">
                 <FaCalendar className="text-cta text-3xl mb-4" />

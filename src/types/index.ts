@@ -28,6 +28,7 @@ export interface Carrera {
   matricula?: string
   requirements?: string[]
   certification?: string[]
+  titulacion?: string
   mallaCurricularImage?: string
   subtitle?: string
 }

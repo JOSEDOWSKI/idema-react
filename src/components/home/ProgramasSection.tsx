@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 import { programCategories, type ProgramCategory } from '../../data/programs'
 
-function CategoriaBlock({ badge, titulo, descripcion, imagen, ruta, cantidad, imagenIzquierda }: ProgramCategory) {
+function CategoriaBlock({ badge, titulo, descripcion, imagen, ruta, cantidad, imagenIzquierda, duracion, modalidad, certificaciones, titulacion }: ProgramCategory) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
 
   const imgVariant: Variants = {
@@ -21,7 +21,7 @@ function CategoriaBlock({ badge, titulo, descripcion, imagen, ruta, cantidad, im
       variants={imgVariant}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
-      className="w-full md:w-1/2 aspect-[4/3] overflow-hidden"
+      className="w-full md:w-1/2 aspect-[4/3] overflow-hidden relative"
     >
       <img
         src={imagen}
@@ -29,6 +29,12 @@ function CategoriaBlock({ badge, titulo, descripcion, imagen, ruta, cantidad, im
         className="w-full h-full object-cover object-center"
         loading="lazy"
       />
+      <span
+        className="absolute top-3 right-3 text-xs font-bold px-3 py-1.5 rounded-full text-white shadow-lg backdrop-blur-sm"
+        style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))', fontFamily: 'var(--font-subheading)' }}
+      >
+        {duracion}
+      </span>
     </motion.div>
   )
 
@@ -60,12 +66,38 @@ function CategoriaBlock({ badge, titulo, descripcion, imagen, ruta, cantidad, im
         {descripcion}
       </p>
 
-      <p
-        className="text-sm font-semibold"
-        style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-subheading)' }}
-      >
-        {cantidad} programa{cantidad !== 1 ? 's' : ''} disponible{cantidad !== 1 ? 's' : ''}
-      </p>
+      <div className="flex flex-wrap items-center gap-2 text-xs" style={{ fontFamily: 'var(--font-subheading)' }}>
+        <span
+          className="px-2.5 py-1 rounded-full font-semibold"
+          style={{ background: 'var(--color-primary)', color: '#fff', opacity: 0.85 }}
+        >
+          {modalidad}
+        </span>
+        <span
+          className="px-2.5 py-1 rounded-full font-semibold"
+          style={{ background: 'var(--color-accent)', color: '#fff', opacity: 0.85 }}
+        >
+          {cantidad} programa{cantidad !== 1 ? 's' : ''}
+        </span>
+      </div>
+
+      {titulacion && (
+        <p
+          className="text-xs font-bold"
+          style={{ color: 'var(--color-primary)', fontFamily: 'var(--font-subheading)' }}
+        >
+          {titulacion}
+        </p>
+      )}
+
+      <ul className="flex flex-col gap-1">
+        {certificaciones.map((cert, i) => (
+          <li key={i} className="flex items-start gap-1.5 text-xs" style={{ color: 'var(--color-dark)', opacity: 0.7, fontFamily: 'var(--font-body)' }}>
+            <span style={{ color: 'var(--color-accent)' }}>✓</span>
+            {cert}
+          </li>
+        ))}
+      </ul>
 
       <div>
         <Link to={ruta} className="no-underline">
