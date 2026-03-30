@@ -83,10 +83,9 @@ export default function LibroReclamacionesPage() {
       </Helmet>
 
       {/* Hero */}
-      <div className="relative h-72 md:h-80 overflow-hidden bg-gradient-to-br from-dark to-deep">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl opacity-20 animate-pulse"></div>
-        </div>
+      <div className="relative h-72 md:h-80 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-top" style={{ backgroundImage: "url('/assets/img/hero/desktop/PRINCIPAL_1.jpeg')" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
