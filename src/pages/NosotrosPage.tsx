@@ -5,9 +5,8 @@ import { FaBullseye, FaLightbulb, FaAward, FaGraduationCap, FaBuilding, FaMapMar
 export default function NosotrosPage() {
   const stats = [
     { icon: FaAward, label: 'Años de Experiencia', value: '+30' },
-    { icon: FaGraduationCap, label: 'Egresados', value: '+5000' },
     { icon: FaBuilding, label: 'Carreras Técnicas', value: '5' },
-    { icon: FaBookOpen, label: 'Cursos Online', value: '+300' },
+    { icon: FaBookOpen, label: 'Cursos Online', value: '+250' },
   ]
 
   const leader = { name: 'Mg. Raúl Herrera Flores', role: 'Gerente General', image: '/assets/img/team/GerenteGeneral.webp' }
@@ -149,7 +148,7 @@ export default function NosotrosPage() {
                   <h3 className="text-2xl font-bold text-deep">Visión</h3>
                 </div>
                 <p className="text-deep leading-relaxed">
-                  Es una organización educativa que forma y capacita profesionales de éxito, líderes en tecnología y ejemplos para su comunidad. Reconocidos por la excelencia en nuestra enseñanza, formación y calidad de servicios, por el respeto que evidenciamos en todos nuestros actos, la protección al medio ambiente y por la convicción de contribuir al desarrollo de nuestra Región y País.
+                  Ser una organización educativa que forma y capacita profesionales de éxito, líderes en tecnología y ejemplos para su comunidad. Reconocidos por la excelencia en nuestra enseñanza, formación y calidad de los servicios, el respeto en nuestros actos, el cuidado del medio ambiente y el compromiso con el desarrollo de nuestra Región y País.
                 </p>
               </motion.div>
             </div>

@@ -5,7 +5,7 @@ import { theme } from '@/theme'
 
 const slides = [
   {
-    desktop: '/assets/img/hero/desktop/PRINCIPAL _1.jpeg',
+    desktop: '/assets/img/hero/desktop/PRINCIPAL_1.jpeg',
     mobile:  '/assets/img/hero/mobile/PRINCIPAL_2.jpeg',
     titulo:    'Instituto IDEMA',
     subtitulo: 'Más de 30 años transformando la educación técnica en el Perú',
