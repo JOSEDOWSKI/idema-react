@@ -91,7 +91,7 @@ export default function ProgramasPage() {
       {/* Header */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-top" style={{ backgroundImage: "url('/assets/img/hero/desktop/PRINCIPAL_1.jpeg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/85 via-dark/60 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -114,7 +114,7 @@ export default function ProgramasPage() {
       </section>
 
       {/* Filters & Content */}
-      <section className="py-12 sm:py-16 bg-surface">
+      <section className="py-16 sm:py-20 lg:py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Search + Filters */}
           <div className="flex flex-col sm:flex-row gap-4 mb-10 items-center justify-between">
@@ -177,8 +177,8 @@ export default function ProgramasPage() {
       </section>
 
       {/* Ruta de Aprendizaje */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -186,10 +186,13 @@ export default function ProgramasPage() {
             transition={{ duration: 0.6 }}
             className="bg-gradient-to-br from-primary/10 to-accent/10 p-8 sm:p-12 rounded-2xl border border-primary/20"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-deep mb-2 text-center">Ruta de Aprendizaje IDEMA</h2>
-            <p className="text-deep/60 text-center mb-10 text-sm">
-              Desde formación técnica base hasta especialización avanzada
-            </p>
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Ruta de Aprendizaje IDEMA</h2>
+              <p className="text-deep/60 text-sm">
+                Desde formación técnica base hasta especialización avanzada
+              </p>
+              <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-4" />
+            </div>
 
             <div className="space-y-6">
               {learningPath.map((step, i) => (
@@ -222,9 +225,9 @@ export default function ProgramasPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-12 bg-gradient-to-r from-primary to-dark rounded-xl p-8 sm:p-12 text-white text-center"
+            className="mt-12 bg-gradient-to-r from-primary to-dark rounded-2xl p-8 sm:p-12 text-white text-center"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3">¿No sabes cuál elegir?</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">¿No sabes cuál elegir?</h2>
             <p className="text-white/80 mb-6 max-w-xl mx-auto">
               Realiza nuestra prueba de orientación vocacional y descubre el programa que mejor se ajusta a tus intereses.
             </p>

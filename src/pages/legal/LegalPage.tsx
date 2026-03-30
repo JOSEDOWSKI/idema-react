@@ -262,9 +262,9 @@ export default function LegalPage() {
       </Helmet>
 
       {/* Hero Section */}
-      <div className="relative h-80 md:h-96 overflow-hidden">
+      <div className="relative h-72 md:h-80 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-top" style={{ backgroundImage: "url('/assets/img/hero/desktop/PRINCIPAL_1.jpeg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/85 via-dark/60 to-transparent" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -272,14 +272,15 @@ export default function LegalPage() {
           transition={{ duration: 0.6 }}
           className="relative h-full flex flex-col justify-center items-center text-white text-center p-6"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">{pageType}</h1>
-          <p className="text-sm md:text-base text-primary">Instituto de Educación Superior IDEMA</p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">{pageType}</h1>
+          <p className="text-lg sm:text-xl text-white/80">Instituto de Educación Superior IDEMA</p>
         </motion.div>
       </div>
 
       {/* Main Content */}
-      <div className="bg-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-6 md:px-12">
+      <div className="bg-white py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           {sections.map((section, index) => (
             <motion.div
               key={index}
@@ -333,7 +334,7 @@ export default function LegalPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl border-2 border-primary/30"
+            className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl border-2 border-primary/30"
           >
             <h2 className="text-2xl font-bold text-deep mb-4">Contacto y Consultas</h2>
             <p className="text-deep mb-4">
@@ -351,6 +352,7 @@ export default function LegalPage() {
               </p>
             </div>
           </motion.div>
+        </div>
         </div>
       </div>
     </>
